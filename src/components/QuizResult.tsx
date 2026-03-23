@@ -4,11 +4,12 @@ import type { Question } from '../types';
 interface QuizResultProps {
   questions: Question[];
   answers: Record<number, 'correct' | 'incorrect'>;
+  userSelections: Record<number, string[]>;
   onBackToDashboard: () => void;
   onRetry: () => void;
 }
 
-function QuizResult({ questions, answers, onBackToDashboard, onRetry }: QuizResultProps) {
+function QuizResult({ questions, answers, userSelections, onBackToDashboard, onRetry }: QuizResultProps) {
   const [showReview, setShowReview] = useState(false);
 
   const total = questions.length;
@@ -97,7 +98,30 @@ function QuizResult({ questions, answers, onBackToDashboard, onRetry }: QuizResu
               <div className="review-item__question">
                 <strong>Q{q.id}:</strong> {q.question}
               </div>
-              <div className="review-item__answer">{q.answer}</div>
+              
+              {q.choices && q.choices.length > 0 ? (
+                <>
+                  <div className="review-item__selection">
+                    <span className="review-item__label">Your selection: </span>
+                    <span className="review-item__value-wrong" style={{color: 'var(--error)'}}>
+                      {userSelections[q.id]?.length > 0 ? userSelections[q.id].join(', ') : 'None'}
+                    </span>
+                  </div>
+                  <div className="review-item__selection">
+                    <span className="review-item__label">Correct answer: </span>
+                    <span className="review-item__value-correct" style={{color: 'var(--success)', fontWeight: 'bold'}}>
+                      {q.correctLetters?.join(', ') || 'Unknown'}
+                    </span>
+                  </div>
+                  <div className="review-item__answer" style={{marginTop: '0.75rem'}}>
+                    {q.choices.filter(c => q.correctLetters?.includes(c.letter) || c.isCorrect).map(c => (
+                      <div key={c.letter}><strong>{c.letter}:</strong> {c.text}</div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <div className="review-item__answer">{q.answerText || 'Auto-scoring not available'}</div>
+              )}
             </div>
           ))}
         </div>

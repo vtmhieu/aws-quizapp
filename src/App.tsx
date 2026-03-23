@@ -12,16 +12,22 @@ function App() {
   const [view, setView] = useState<ViewType>('dashboard');
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [finalAnswers, setFinalAnswers] = useState<Record<number, 'correct' | 'incorrect'>>({});
+  const [finalSelections, setFinalSelections] = useState<Record<number, string[]>>({});
 
   const handleStartQuiz = useCallback((questions: Question[]) => {
     setQuizQuestions(questions);
     setFinalAnswers({});
+    setFinalSelections({});
     setView('quiz');
     window.scrollTo(0, 0);
   }, []);
 
-  const handleFinishQuiz = useCallback((answers: Record<number, 'correct' | 'incorrect'>) => {
+  const handleFinishQuiz = useCallback((
+    answers: Record<number, 'correct' | 'incorrect'>,
+    selections: Record<number, string[]>
+  ) => {
     setFinalAnswers(answers);
+    setFinalSelections(selections);
     setView('results');
     window.scrollTo(0, 0);
   }, []);
@@ -33,6 +39,7 @@ function App() {
 
   const handleRetry = useCallback(() => {
     setFinalAnswers({});
+    setFinalSelections({});
     setView('quiz');
     window.scrollTo(0, 0);
   }, []);
@@ -67,6 +74,7 @@ function App() {
         <QuizResult
           questions={quizQuestions}
           answers={finalAnswers}
+          userSelections={finalSelections}
           onBackToDashboard={handleBackToDashboard}
           onRetry={handleRetry}
         />

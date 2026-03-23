@@ -3,25 +3,80 @@ import type { Question } from '../types';
 
 interface QuizProps {
   questions: Question[];
-  onFinish: (answers: Record<number, 'correct' | 'incorrect'>) => void;
+  onFinish: (
+    answers: Record<number, 'correct' | 'incorrect'>,
+    selections: Record<number, string[]>
+  ) => void;
   onBack: () => void;
 }
 
 function Quiz({ questions, onFinish, onBack }: QuizProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  // Track correctness of each question
   const [answers, setAnswers] = useState<Record<number, 'correct' | 'incorrect'>>({});
+  // Track user selected letters for each question
+  const [userSelections, setUserSelections] = useState<Record<number, string[]>>({});
+  // Track revealed status for each question
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
 
   const question = questions[currentIndex];
-  const progress = ((currentIndex + 1) / questions.length) * 100;
+  // Calculate progress relative to answered questions instead of currentIndex
+  const progress = (Object.keys(answers).length / questions.length) * 100;
+  
   const isRevealed = revealed[question.id] ?? false;
-  const hasAnswered = question.id in answers;
-
-  const correctCount = Object.values(answers).filter((a) => a === 'correct').length;
+  
+  // A question counts as answered once it's revealed and scored
+  
   const answeredCount = Object.keys(answers).length;
+
+  const currentSelections = userSelections[question.id] || [];
+  
+  // Calculate if the selected options exactly match the correct options
+  const isSelectionCorrect = () => {
+    if (!question.correctLetters || question.correctLetters.length === 0) return false;
+    
+    // Sort to compare arrays safely
+    const selected = [...currentSelections].sort();
+    const correct = [...question.correctLetters].sort();
+    
+    if (selected.length !== correct.length) return false;
+    
+    for (let i = 0; i < selected.length; i++) {
+        if (selected[i] !== correct[i]) return false;
+    }
+    return true;
+  };
+
+  const handleToggleOption = (letter: string) => {
+    if (isRevealed) return; // Disallow changes after reveal
+
+    setUserSelections((prev) => {
+      const prevSelections = prev[question.id] || [];
+      let newSelections;
+
+      if (question.isMultiSelect) {
+        if (prevSelections.includes(letter)) {
+          newSelections = prevSelections.filter((l) => l !== letter);
+        } else {
+          newSelections = [...prevSelections, letter];
+        }
+      } else {
+        // Single select
+        newSelections = [letter];
+      }
+
+      return { ...prev, [question.id]: newSelections };
+    });
+  };
 
   const handleReveal = () => {
     setRevealed((prev) => ({ ...prev, [question.id]: true }));
+    
+    // Auto-score based on selections if there are correct letters data
+    if (question.correctLetters && question.correctLetters.length > 0) {
+      const result = isSelectionCorrect() ? 'correct' : 'incorrect';
+      setAnswers((prev) => ({ ...prev, [question.id]: result }));
+    }
   };
 
   const handleSelfAssess = (result: 'correct' | 'incorrect') => {
@@ -41,10 +96,49 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
   };
 
   const handleFinish = () => {
-    onFinish(answers);
+    onFinish(answers, userSelections);
   };
 
   const isLast = currentIndex === questions.length - 1;
+
+  // Render option choice buttons
+  const renderChoices = () => {
+    if (!question.choices || question.choices.length === 0) return null;
+
+    return (
+      <div className="choices">
+        {question.choices.map((choice) => {
+          const isSelected = currentSelections.includes(choice.letter);
+          const isCorrectChoice = question.correctLetters?.includes(choice.letter) || choice.isCorrect;
+          
+          let choiceClass = "choice-item";
+          
+          if (isSelected) choiceClass += " choice-item--selected";
+          
+          if (isRevealed) {
+            if (isCorrectChoice) {
+              choiceClass += " choice-item--correct-answer";
+            } else if (isSelected && !isCorrectChoice) {
+              choiceClass += " choice-item--wrong-selection";
+            }
+          }
+
+          return (
+            <div 
+              key={choice.letter} 
+              className={choiceClass}
+              onClick={() => handleToggleOption(choice.letter)}
+            >
+              <div className="choice-item__letter">{choice.letter}</div>
+              <div className="choice-item__text">{choice.text}</div>
+              {isRevealed && isCorrectChoice && <div className="choice-item__icon">✓</div>}
+              {isRevealed && isSelected && !isCorrectChoice && <div className="choice-item__icon">✗</div>}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
     <div className="quiz">
@@ -57,11 +151,9 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
           <div className="quiz-header__counter">
             {currentIndex + 1} / {questions.length}
           </div>
-          {answeredCount > 0 && (
-            <div className="quiz-header__score">
-              {correctCount}/{answeredCount} correct
-            </div>
-          )}
+          <div className="quiz-header__score" style={{color: 'var(--text-secondary)'}}>
+             Answered: {answeredCount}
+          </div>
         </div>
       </div>
 
@@ -74,22 +166,48 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
       <div className="question-card" key={question.id}>
         <div className="question-card__number">Question #{question.id}</div>
         <div className="question-card__text">{question.question}</div>
+        
         {question.isMultiSelect && (
           <div className="question-card__multi-badge">
             Multiple answers required
           </div>
         )}
 
-        {/* Answer Area */}
+        {/* Dynamic Multi-choice Options */}
+        {renderChoices()}
+
+        {/* Answer Section */}
         <div className="answer-section">
           {!isRevealed ? (
-            <button className="reveal-btn" onClick={handleReveal}>
-              Reveal Answer
+            <button 
+                className="reveal-btn" 
+                onClick={handleReveal}
+                disabled={currentSelections.length === 0}
+            >
+              Check Answer
             </button>
           ) : (
             <div className="answer-reveal">
-              <div className="answer-reveal__header">Correct Answer</div>
-              <div className="answer-reveal__answer">{question.answer}</div>
+              <div className="answer-reveal__header">Feedback</div>
+              
+              <div style={{
+                  marginBottom: '1rem',
+                  padding: '1rem',
+                  borderRadius: 'var(--radius-md)',
+                  backgroundColor: answers[question.id] === 'correct' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+                  border: `1px solid ${answers[question.id] === 'correct' ? 'var(--success)' : 'var(--error)'}`,
+                  color: answers[question.id] === 'correct' ? 'var(--success)' : 'var(--error)',
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+              }}>
+                 {answers[question.id] === 'correct' ? "✓ Correct!" : "✗ Incorrect"}
+              </div>
+
+              {(!question.choices || question.choices.length === 0) && (
+                <div className="answer-reveal__answer">{question.answerText}</div>
+              )}
 
               {question.explanation && (
                 <>
@@ -101,57 +219,29 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
                   </div>
                 </>
               )}
-
-              {!hasAnswered && (
+              
+              {/* Fallback self assess if scoring failed for some reason */}
+              {(!question.correctLetters || question.correctLetters.length === 0) && (
                 <>
-                  <div
-                    className="self-assess__label"
-                    style={{ marginTop: '1rem' }}
-                  >
-                    Did you know this?
+                  <div className="self-assess__label" style={{ marginTop: '1rem' }}>
+                    Auto-scoring unavailable. Were you correct?
                   </div>
                   <div className="self-assess">
                     <button
-                      className="self-assess__btn self-assess__btn--correct"
+                      className={`self-assess__btn self-assess__btn--correct ${answers[question.id] === 'correct' ? 'active' : ''}`}
                       onClick={() => handleSelfAssess('correct')}
+                      style={answers[question.id] === 'correct' ? {background: 'var(--success)', color: 'white'} : {}}
                     >
-                      ✓ I knew it
+                      ✓ Correct
                     </button>
                     <button
-                      className="self-assess__btn self-assess__btn--incorrect"
+                      className={`self-assess__btn self-assess__btn--incorrect ${answers[question.id] === 'incorrect' ? 'active' : ''}`}
                       onClick={() => handleSelfAssess('incorrect')}
                     >
-                      ✗ I didn't know
+                      ✗ Incorrect
                     </button>
                   </div>
                 </>
-              )}
-
-              {hasAnswered && (
-                <div
-                  style={{
-                    marginTop: '1rem',
-                    padding: '0.5rem 0.75rem',
-                    borderRadius: '8px',
-                    fontSize: '0.85rem',
-                    fontWeight: 600,
-                    ...(answers[question.id] === 'correct'
-                      ? {
-                          background: 'var(--success-bg)',
-                          color: 'var(--success)',
-                          border: '1px solid var(--success-border)',
-                        }
-                      : {
-                          background: 'var(--error-bg)',
-                          color: 'var(--error)',
-                          border: '1px solid var(--error-border)',
-                        }),
-                  }}
-                >
-                  {answers[question.id] === 'correct'
-                    ? '✓ Marked as known'
-                    : '✗ Marked for review'}
-                </div>
               )}
             </div>
           )}
@@ -175,7 +265,7 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
             Next →
           </button>
         ) : (
-          <button className="nav-btn nav-btn--finish" onClick={handleFinish}>
+          <button className="nav-btn nav-btn--finish" onClick={handleFinish} disabled={!isRevealed}>
             Finish Quiz 🏁
           </button>
         )}
