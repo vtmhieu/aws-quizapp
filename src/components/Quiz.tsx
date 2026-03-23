@@ -164,7 +164,21 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
 
       {/* Question */}
       <div className="question-card" key={question.id}>
-        <div className="question-card__number">Question #{question.id}</div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+          <div className="question-card__number">Question #{question.id}</div>
+          {question.domain && (
+            <div style={{
+              fontSize: '0.75rem',
+              color: 'var(--text-secondary)',
+              padding: '0.25rem 0.5rem',
+              background: 'var(--bg-secondary)',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-sm)'
+            }}>
+              {question.domain}
+            </div>
+          )}
+        </div>
         <div className="question-card__text">{question.question}</div>
         
         {question.isMultiSelect && (

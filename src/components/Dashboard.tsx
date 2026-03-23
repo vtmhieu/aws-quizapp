@@ -69,8 +69,30 @@ function Dashboard({ questions, onStartQuiz }: DashboardProps) {
         </button>
       </div>
 
+      {/* Domains */}
+      <div className="dashboard__section-title">🏢 By Domain</div>
+      <div className="dashboard__sets" style={{ marginBottom: '2rem' }}>
+        {['Design Secure Architectures', 'Design Resilient Architectures', 'Design High-Performing Architectures', 'Design Cost-Optimized Architectures'].map((domain) => {
+          const domainQs = questions.filter(q => q.domain === domain);
+          if (domainQs.length === 0) return null;
+          
+          return (
+            <div
+              key={domain}
+              className="set-card"
+              style={{ borderLeft: '3px solid var(--accent-primary)' }}
+              onClick={() => onStartQuiz(domainQs)}
+            >
+              <div className="set-card__number">Domain</div>
+              <div className="set-card__title" style={{ fontSize: '0.9rem' }}>{domain}</div>
+              <div className="set-card__meta">{domainQs.length} questions</div>
+            </div>
+          );
+        })}
+      </div>
+
       {/* Practice Sets */}
-      <div className="dashboard__section-title">📚 Practice Sets</div>
+      <div className="dashboard__section-title">📚 Practice Sets (All Domains)</div>
       <div className="dashboard__sets">
         {practiceSets.map((set) => (
           <div
