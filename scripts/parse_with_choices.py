@@ -163,9 +163,50 @@ def parse_txt_answers(path):
     
     return answers
 
+def assign_domain(q_text, a_text, expl):
+    """Assign a domain based on keyword heuristics."""
+    combined = (q_text + " " + a_text + " " + expl).lower()
+    
+    # Domain 1: Design Secure Architectures
+    d1_keywords = ['iam', 'kms', 'waf', 'shield', 'cognito', 'guardduty', 'security group', 'encrypt', 'auth', 'nacl', 'macie', 'inspector', 'certificate', 'acm', 'policy', 'role', 'mfa']
+    
+    # Domain 2: Design Resilient Architectures
+    d2_keywords = ['multi-az', 'auto scaling', 'route 53', 'failover', 'backup', 'sqs', 'sns', 'decouple', 'disaster recovery', 'cross-region', 'global table', 'snapshot', 'read replica']
+    
+    # Domain 3: Design High-Performing Architectures
+    d3_keywords = ['cloudfront', 'elasticache', 'global accelerator', 'iops', 'cache', 'latency', 'perform', 'eks', 'ecs', 'fsx', 'memcached', 'redis', 'aurora', 'compute optimized', 'memory optimized']
+    
+    # Domain 4: Design Cost-Optimized Architectures
+    d4_keywords = ['spot', 'savings plan', 'glacier', 'lifecycle', 'cost', 'budget', 'inexpensive', 'lowest cost', 'cost explorer', 'reserved instance', 's3 intelligent', 's3 standard-ia']
+    
+    scores = {
+        'Design Secure Architectures': sum(combined.count(kw) for kw in d1_keywords),
+        'Design Resilient Architectures': sum(combined.count(kw) for kw in d2_keywords),
+        'Design High-Performing Architectures': sum(combined.count(kw) for kw in d3_keywords),
+        'Design Cost-Optimized Architectures': sum(combined.count(kw) for kw in d4_keywords)
+    }
+    
+    # Default if no keywords match securely
+    best_domain = 'Design Resilient Architectures' 
+    best_score = 0
+    
+    for domain, score in scores.items():
+        if score > best_score:
+            best_score = score
+            best_domain = domain
+            
+    return best_domain
+
 def merge_and_output(pdf_questions, txt_answers, out_path):
     """Merge PDF choices with text answers and output JSON."""
     result = []
+    
+    domain_counts = {
+        'Design Secure Architectures': 0,
+        'Design Resilient Architectures': 0,
+        'Design High-Performing Architectures': 0,
+        'Design Cost-Optimized Architectures': 0
+    }
     
     for qid in sorted(pdf_questions.keys()):
         pq = pdf_questions[qid]
@@ -181,28 +222,42 @@ def merge_and_output(pdf_questions, txt_answers, out_path):
                     correct_letters.append(letter)
         
         choices = []
+        choices_text = ""
         for letter in ['A', 'B', 'C', 'D', 'E']:
             if letter in pq.get('choices', {}):
+                text = pq['choices'][letter]
                 choices.append({
                     'letter': letter,
-                    'text': pq['choices'][letter],
+                    'text': text,
                     'isCorrect': letter in correct_letters
                 })
+                choices_text += " " + text
         
         is_multi = len(correct_letters) > 1 or 'choose two' in pq['question'].lower() or 'choose three' in pq['question'].lower()
+        
+        expl = ta.get('explanation', '')
+        answer_text = ta.get('answer_text', '')
+        
+        domain = assign_domain(pq['question'], choices_text + " " + answer_text, expl)
+        domain_counts[domain] += 1
         
         result.append({
             'id': qid,
             'question': pq['question'],
             'choices': choices,
             'correctLetters': correct_letters,
-            'explanation': ta.get('explanation', ''),
-            'answerText': ta.get('answer_text', ''),
-            'isMultiSelect': is_multi
+            'explanation': expl,
+            'answerText': answer_text,
+            'isMultiSelect': is_multi,
+            'domain': domain
         })
     
     with open(out_path, 'w') as f:
         json.dump(result, f, indent=2)
+        
+    print("\nDomain Distribution:")
+    for d, c in domain_counts.items():
+        print(f"  {d}: {c} ({(c/len(result))*100:.1f}%)")
     
     return result
 

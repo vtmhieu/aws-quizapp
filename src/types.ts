@@ -12,6 +12,7 @@ export interface Question {
   explanation: string;
   answerText: string;
   isMultiSelect: boolean;
+  domain?: string;
 }
 
 export type ViewType = 'dashboard' | 'quiz' | 'results';
