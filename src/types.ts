@@ -17,6 +17,16 @@ export interface Question {
 
 export type ViewType = 'dashboard' | 'quiz' | 'results';
 
+export interface QuizHistoryEntry {
+  id: string;
+  totalQuestions: number;
+  correct: number;
+  incorrect: number;
+  percentage: number;
+  domain?: string | null;
+  date: string;
+}
+
 export interface QuizState {
   currentView: ViewType;
   quizQuestions: Question[];

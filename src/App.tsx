@@ -1,5 +1,8 @@
 import { useState, useCallback } from 'react';
 import questionsData from './data/questions.json';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import AuthModal from './components/AuthModal';
+import UserMenu from './components/UserMenu';
 import Dashboard from './components/Dashboard';
 import Quiz from './components/Quiz';
 import QuizResult from './components/QuizResult';
@@ -8,11 +11,13 @@ import './index.css';
 
 const allQuestions: Question[] = questionsData as Question[];
 
-function App() {
+function AppContent() {
+  const { user } = useAuth();
   const [view, setView] = useState<ViewType>('dashboard');
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [finalAnswers, setFinalAnswers] = useState<Record<number, 'correct' | 'incorrect'>>({});
   const [finalSelections, setFinalSelections] = useState<Record<number, string[]>>({});
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   const handleStartQuiz = useCallback((questions: Question[]) => {
     setQuizQuestions(questions);
@@ -48,14 +53,20 @@ function App() {
     <div className="app-container">
       {/* Header */}
       <header className="app-header">
-        <div className="app-header__logo">
-          <div className="app-header__icon">☁️</div>
-          <h1 className="app-header__title">AWS Quiz Pro</h1>
+        <div className="app-header__top-row">
+          <div className="app-header__logo">
+            <div className="app-header__icon">☁️</div>
+            <h1 className="app-header__title">AWS Quiz Pro</h1>
+          </div>
+          <UserMenu onSignInClick={() => setShowAuthModal(true)} />
         </div>
         <p className="app-header__subtitle">
           Solutions Architect Associate (SAA-C03) — {allQuestions.length} Practice Questions
         </p>
       </header>
+
+      {/* Auth Modal */}
+      <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
 
       {/* Views */}
       {view === 'dashboard' && (
@@ -77,9 +88,18 @@ function App() {
           userSelections={finalSelections}
           onBackToDashboard={handleBackToDashboard}
           onRetry={handleRetry}
+          userId={user?.uid || null}
         />
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

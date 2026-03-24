@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Question } from '../types';
+import { saveQuizResult } from '../services/progressService';
 
 interface QuizResultProps {
   questions: Question[];
@@ -7,10 +8,12 @@ interface QuizResultProps {
   userSelections: Record<number, string[]>;
   onBackToDashboard: () => void;
   onRetry: () => void;
+  userId: string | null;
 }
 
-function QuizResult({ questions, answers, userSelections, onBackToDashboard, onRetry }: QuizResultProps) {
+function QuizResult({ questions, answers, userSelections, onBackToDashboard, onRetry, userId }: QuizResultProps) {
   const [showReview, setShowReview] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   const total = questions.length;
   const answered = Object.keys(answers).length;
@@ -18,6 +21,30 @@ function QuizResult({ questions, answers, userSelections, onBackToDashboard, onR
   const incorrect = answered - correct;
   const unanswered = total - answered;
   const percentage = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+
+  // Auto-save quiz result for logged-in users
+  useEffect(() => {
+    if (!userId || saved) return;
+
+    // Determine dominant domain
+    const domainCounts: Record<string, number> = {};
+    questions.forEach((q) => {
+      if (q.domain) {
+        domainCounts[q.domain] = (domainCounts[q.domain] || 0) + 1;
+      }
+    });
+    const topDomain = Object.entries(domainCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || null;
+
+    saveQuizResult(userId, {
+      totalQuestions: total,
+      correct,
+      incorrect,
+      percentage,
+      domain: topDomain,
+    })
+      .then(() => setSaved(true))
+      .catch(console.error);
+  }, [userId, saved, questions, total, correct, incorrect, percentage]);
 
   const getGrade = () => {
     if (percentage >= 90) return { emoji: '🏆', text: 'Outstanding!' };
@@ -35,6 +62,11 @@ function QuizResult({ questions, answers, userSelections, onBackToDashboard, onR
 
   return (
     <div className="results">
+      {/* Saved indicator */}
+      {saved && (
+        <div className="results__saved-badge">✓ Progress saved</div>
+      )}
+
       {/* Score Circle */}
       <div className="results__score-circle">
         <div className="results__score-value">{percentage}%</div>

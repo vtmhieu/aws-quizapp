@@ -1,4 +1,5 @@
 import type { Question } from '../types';
+import ProgressDashboard from './ProgressDashboard';
 
 interface DashboardProps {
   questions: Question[];
@@ -28,6 +29,9 @@ function Dashboard({ questions, onStartQuiz }: DashboardProps) {
 
   return (
     <div className="dashboard">
+      {/* Progress (logged-in users) */}
+      <ProgressDashboard />
+
       {/* Stats bar */}
       <div className="dashboard__stats">
         <div className="stat-card">
