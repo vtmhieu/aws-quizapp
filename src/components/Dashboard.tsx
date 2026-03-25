@@ -31,7 +31,7 @@ function Dashboard({ questions, onStartQuiz, onOpenRevision }: DashboardProps) {
   return (
     <div className="dashboard">
       {/* Progress (logged-in users) */}
-      <ProgressDashboard />
+      <ProgressDashboard onStartQuiz={onStartQuiz} />
 
       {/* Stats bar */}
       <div className="dashboard__stats">

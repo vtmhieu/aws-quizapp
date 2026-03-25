@@ -42,3 +42,37 @@ export async function getQuizHistory(
     };
   });
 }
+
+export async function saveIncorrectQuestions(userId: string | null, questionIds: number[]): Promise<void> {
+  if (!questionIds || questionIds.length === 0) return;
+  const storageKey = userId ? `mistakes_${userId}` : 'mistakes_guest';
+  try {
+    const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    const updated = Array.from(new Set([...existing, ...questionIds]));
+    localStorage.setItem(storageKey, JSON.stringify(updated));
+  } catch (e) {
+    console.warn("Failed to save mistakes to localStorage", e);
+  }
+}
+
+export async function removeCorrectedQuestions(userId: string | null, questionIds: number[]): Promise<void> {
+  if (!questionIds || questionIds.length === 0) return;
+  const storageKey = userId ? `mistakes_${userId}` : 'mistakes_guest';
+  try {
+    const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    const updated = existing.filter((id: number) => !questionIds.includes(id));
+    localStorage.setItem(storageKey, JSON.stringify(updated));
+  } catch (e) {
+    console.warn("Failed to remove mistakes from localStorage", e);
+  }
+}
+
+export async function getIncorrectQuestionIds(userId: string | null): Promise<number[]> {
+  const storageKey = userId ? `mistakes_${userId}` : 'mistakes_guest';
+  try {
+    return JSON.parse(localStorage.getItem(storageKey) || '[]');
+  } catch (e) {
+    console.warn("Failed to read mistakes from localStorage", e);
+    return [];
+  }
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { Question } from '../types';
-import { saveQuizResult } from '../services/progressService';
+import { saveQuizResult, saveIncorrectQuestions, removeCorrectedQuestions } from '../services/progressService';
 
 interface QuizResultProps {
   questions: Question[];
@@ -22,29 +22,45 @@ function QuizResult({ questions, answers, userSelections, onBackToDashboard, onR
   const unanswered = total - answered;
   const percentage = answered > 0 ? Math.round((correct / answered) * 100) : 0;
 
-  // Auto-save quiz result for logged-in users
+  // Auto-save logic
   useEffect(() => {
-    if (!userId || saved) return;
+    if (saved) return;
+    
+    setSaved(true);
 
-    // Determine dominant domain
-    const domainCounts: Record<string, number> = {};
-    questions.forEach((q) => {
-      if (q.domain) {
-        domainCounts[q.domain] = (domainCounts[q.domain] || 0) + 1;
+    const performSaves = async () => {
+      // 1. Always save mistakes to LocalStorage (works for guests too!)
+      const incorrectIds = questions.filter(q => answers[q.id] === 'incorrect').map(q => q.id);
+      const correctIds = questions.filter(q => answers[q.id] === 'correct').map(q => q.id);
+      
+      const localPromises = [];
+      if (incorrectIds.length > 0) localPromises.push(saveIncorrectQuestions(userId, incorrectIds));
+      if (correctIds.length > 0) localPromises.push(removeCorrectedQuestions(userId, correctIds));
+      await Promise.all(localPromises);
+
+      // 2. Save full history to Firestore only if logged in
+      if (userId) {
+        // Determine dominant domain
+        const domainCounts: Record<string, number> = {};
+        questions.forEach((q) => {
+          if (q.domain) {
+            domainCounts[q.domain] = (domainCounts[q.domain] || 0) + 1;
+          }
+        });
+        const topDomain = Object.entries(domainCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || null;
+
+        await saveQuizResult(userId, {
+          totalQuestions: total,
+          correct,
+          incorrect,
+          percentage,
+          domain: topDomain,
+        }).catch(console.error);
       }
-    });
-    const topDomain = Object.entries(domainCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || null;
+    };
 
-    saveQuizResult(userId, {
-      totalQuestions: total,
-      correct,
-      incorrect,
-      percentage,
-      domain: topDomain,
-    })
-      .then(() => setSaved(true))
-      .catch(console.error);
-  }, [userId, saved, questions, total, correct, incorrect, percentage]);
+    performSaves();
+  }, [userId, saved, questions, answers, total, correct, incorrect, percentage]);
 
   const getGrade = () => {
     if (percentage >= 90) return { emoji: '🏆', text: 'Outstanding!' };
