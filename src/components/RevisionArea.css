@@ -336,3 +336,38 @@ tr:nth-child(even) {
   border-top: 1px dashed var(--border);
   padding-top: 1rem;
 }
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .revision-area {
+    padding: 1rem;
+  }
+  
+  .revision-tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .tab-content {
+    padding: 1.25rem;
+  }
+  
+  .flashcards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .glossary-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .practice-exam-intro {
+    padding: 2rem 1rem;
+  }
+}

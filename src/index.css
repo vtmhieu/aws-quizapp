@@ -1266,16 +1266,14 @@ body::before {
 }
 
 @media (max-width: 480px) {
-  .dashboard__stats {
+  .dashboard__stats,
+  .progress-stats,
+  .results__stats {
     grid-template-columns: 1fr;
   }
 
   .dashboard__quick-actions {
     flex-direction: column;
-  }
-
-  .results__stats {
-    grid-template-columns: 1fr;
   }
 }
 
