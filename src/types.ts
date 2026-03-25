@@ -15,7 +15,7 @@ export interface Question {
   domain?: string;
 }
 
-export type ViewType = 'dashboard' | 'quiz' | 'results';
+export type ViewType = 'dashboard' | 'quiz' | 'results' | 'revision';
 
 export interface QuizHistoryEntry {
   id: string;

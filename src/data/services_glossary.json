@@ -1,0 +1,1100 @@
+[
+  {
+    "id": "ec2",
+    "group": "COMPUTE SERVICES -",
+    "name": "AMAZON EC2",
+    "standsFor": "Elastic Compute Cloud",
+    "description": "Virtual servers in the cloud. Cung cấp computing capacity có thể scale.",
+    "description_en": "Provides scalable computing capacity in the Amazon Web Services (AWS) cloud.",
+    "key_feature": "Resizing compute capacity in minutes"
+  },
+  {
+    "id": "ec2-storage-options",
+    "group": "COMPUTE SERVICES -",
+    "name": "EC2 STORAGE OPTIONS",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Provides scalable computing capacity in the Amazon Web Services (AWS) cloud.",
+    "key_feature": "Resizing compute capacity in minutes"
+  },
+  {
+    "id": "ec2-networking",
+    "group": "COMPUTE SERVICES -",
+    "name": "EC2 NETWORKING",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Provides scalable computing capacity in the Amazon Web Services (AWS) cloud.",
+    "key_feature": "Resizing compute capacity in minutes"
+  },
+  {
+    "id": "ec2-placement-groups",
+    "group": "COMPUTE SERVICES -",
+    "name": "EC2 PLACEMENT GROUPS",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Provides scalable computing capacity in the Amazon Web Services (AWS) cloud.",
+    "key_feature": "Resizing compute capacity in minutes"
+  },
+  {
+    "id": "ec2-auto-scaling",
+    "group": "COMPUTE SERVICES -",
+    "name": "EC2 AUTO SCALING",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Helps maintain application availability by automatically adding or removing EC2 instances according to defined conditions.",
+    "key_feature": "Dynamic scaling and fleet management"
+  },
+  {
+    "id": "lambda",
+    "group": "COMPUTE SERVICES -",
+    "name": "AWS LAMBDA",
+    "standsFor": "",
+    "description": "Serverless compute, chạy code không cần quản lý servers.",
+    "description_en": "Serverless compute service that lets you run code without provisioning or managing servers.",
+    "key_feature": "Pay only for the compute time you consume"
+  },
+  {
+    "id": "elastic-beanstalk",
+    "group": "COMPUTE SERVICES -",
+    "name": "AWS ELASTIC BEANSTALK",
+    "standsFor": "",
+    "description": "PaaS, deploy applications without managing infrastructure.",
+    "description_en": "An easy-to-use service for deploying and scaling web applications and services.",
+    "key_feature": "Platform as a Service (PaaS) with zero infrastructure management"
+  },
+  {
+    "id": "ecs",
+    "group": "COMPUTE SERVICES -",
+    "name": "AMAZON ECS",
+    "standsFor": "Elastic Container Service",
+    "description": "Managed container orchestration service (Docker).",
+    "description_en": "Highly scalable, high-performance container orchestration service that supports Docker containers.",
+    "key_feature": "Native AWS container management"
+  },
+  {
+    "id": "eks",
+    "group": "COMPUTE SERVICES -",
+    "name": "AMAZON EKS",
+    "standsFor": "Elastic Kubernetes Service",
+    "description": "Managed Kubernetes service.",
+    "description_en": "Managed service that makes it easy to run Kubernetes on AWS without installing your own control plane.",
+    "key_feature": "Managed Kubernetes control plane"
+  },
+  {
+    "id": "batch",
+    "group": "COMPUTE SERVICES -",
+    "name": "AWS BATCH",
+    "standsFor": "",
+    "description": "Managed batch processing at any scale.",
+    "description_en": "Enables developers and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS.",
+    "key_feature": "Dynamic provisioning of optimal quantity and type of compute resources"
+  },
+  {
+    "id": "1️⃣-lightsail",
+    "group": "COMPUTE SERVICES -",
+    "name": "1️⃣ AMAZON LIGHTSAIL",
+    "standsFor": "",
+    "description": "Simplified VPS (Virtual Private Server), easy to use.",
+    "description_en": "Easy-to-use virtual private server (VPS) alternative that offers everything needed to build an application or website.",
+    "key_feature": "Predictable low monthly price"
+  },
+  {
+    "id": "s3",
+    "group": "STORAGE SERVICES -",
+    "name": "AMAZON S3",
+    "standsFor": "Simple Storage Service",
+    "description": "Object storage service, lưu trữ unlimited data dưới dạng objects trong buckets.",
+    "description_en": "Object storage built to store and retrieve any amount of data from anywhere.",
+    "key_feature": "11 9s (99.999999999%) of data durability"
+  },
+  {
+    "id": "s3-storage-classes",
+    "group": "STORAGE SERVICES -",
+    "name": "S3 STORAGE CLASSES",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Object storage built to store and retrieve any amount of data from anywhere.",
+    "key_feature": "11 9s (99.999999999%) of data durability"
+  },
+  {
+    "id": "s3-lifecycle-policies",
+    "group": "STORAGE SERVICES -",
+    "name": "S3 LIFECYCLE POLICIES",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Object storage built to store and retrieve any amount of data from anywhere.",
+    "key_feature": "11 9s (99.999999999%) of data durability"
+  },
+  {
+    "id": "s3-versioning",
+    "group": "STORAGE SERVICES -",
+    "name": "S3 VERSIONING",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Object storage built to store and retrieve any amount of data from anywhere.",
+    "key_feature": "11 9s (99.999999999%) of data durability"
+  },
+  {
+    "id": "s3-replication",
+    "group": "STORAGE SERVICES -",
+    "name": "S3 REPLICATION",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Object storage built to store and retrieve any amount of data from anywhere.",
+    "key_feature": "11 9s (99.999999999%) of data durability"
+  },
+  {
+    "id": "s3-security",
+    "group": "STORAGE SERVICES -",
+    "name": "S3 SECURITY",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Object storage built to store and retrieve any amount of data from anywhere.",
+    "key_feature": "11 9s (99.999999999%) of data durability"
+  },
+  {
+    "id": "s3-performance",
+    "group": "STORAGE SERVICES -",
+    "name": "S3 PERFORMANCE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Object storage built to store and retrieve any amount of data from anywhere.",
+    "key_feature": "11 9s (99.999999999%) of data durability"
+  },
+  {
+    "id": "s3-advanced-features",
+    "group": "STORAGE SERVICES -",
+    "name": "S3 ADVANCED FEATURES",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Object storage built to store and retrieve any amount of data from anywhere.",
+    "key_feature": "11 9s (99.999999999%) of data durability"
+  },
+  {
+    "id": "ebs",
+    "group": "STORAGE SERVICES -",
+    "name": "AMAZON EBS",
+    "standsFor": "Elastic Block Store",
+    "description": "Block storage for EC2 instances. Network-attached, persistent.",
+    "description_en": "Easy to use, high-performance block storage service designed for use with Amazon EC2.",
+    "key_feature": "Persistent block level storage volumes"
+  },
+  {
+    "id": "efs",
+    "group": "STORAGE SERVICES -",
+    "name": "AMAZON EFS",
+    "standsFor": "Elastic File System",
+    "description": "Managed NFS (Network File System), shared file storage.",
+    "description_en": "Serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity.",
+    "key_feature": "Scalable POSIX-compliant shared file system"
+  },
+  {
+    "id": "1️⃣-storage-gateway",
+    "group": "STORAGE SERVICES -",
+    "name": "1️⃣ AWS STORAGE GATEWAY",
+    "standsFor": "",
+    "description": "Hybrid cloud storage, bridge on-premises and AWS.",
+    "description_en": "Hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage.",
+    "key_feature": "Seamless integration between on-prem environments and AWS storage"
+  },
+  {
+    "id": "2️⃣-snow-family",
+    "group": "STORAGE SERVICES -",
+    "name": "2️⃣ AWS SNOW FAMILY",
+    "standsFor": "",
+    "description": "Physical devices for data migration and edge computing.",
+    "description_en": "Physical devices used to migrate large amounts of data into and out of AWS.",
+    "key_feature": "Offline data transfer for petabyte-scale data"
+  },
+  {
+    "id": "3️⃣-fsx",
+    "group": "STORAGE SERVICES -",
+    "name": "3️⃣ AWS FSx",
+    "standsFor": "",
+    "description": "Managed third-party file systems.",
+    "description_en": "Fully managed third-party file systems with the native compatibility and feature sets of workloads.",
+    "key_feature": "Native Windows and Lustre file systems"
+  },
+  {
+    "id": "4️⃣-datasync",
+    "group": "STORAGE SERVICES -",
+    "name": "4️⃣ AWS DATASYNC",
+    "standsFor": "",
+    "description": "Automated data transfer service.",
+    "description_en": "Secure online service that automates and accelerates moving data between on-premises and AWS storage services.",
+    "key_feature": "Automated, accelerated data transfer"
+  },
+  {
+    "id": "rds",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON RDS",
+    "standsFor": "Relational Database Service",
+    "description": "Managed relational database service. AWS quản lý patching, backups, scaling.",
+    "description_en": "Easy to set up, operate, and scale a relational database in the cloud.",
+    "key_feature": "Automated backups and multi-AZ synchronous replication"
+  },
+  {
+    "id": "aurora",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON AURORA",
+    "standsFor": "",
+    "description": "AWS proprietary database, MySQL/PostgreSQL compatible.",
+    "description_en": "MySQL and PostgreSQL-compatible relational database built for the cloud.",
+    "key_feature": "Up to 5X throughput of standard MySQL and 3X standard PostgreSQL"
+  },
+  {
+    "id": "dynamodb",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON DYNAMODB",
+    "standsFor": "",
+    "description": "Fully managed NoSQL database, serverless, millisecond latency.",
+    "description_en": "Key-value and document database that delivers single-digit millisecond performance at any scale.",
+    "key_feature": "Fully managed NoSQL with built-in security and in-memory caching"
+  },
+  {
+    "id": "elasticache",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON ELASTICACHE",
+    "standsFor": "",
+    "description": "Managed in-memory cache (Redis, Memcached).",
+    "description_en": "Fully managed in-memory data store and cache service by AWS (Redis and Memcached).",
+    "key_feature": "Sub-millisecond latency for real-time applications"
+  },
+  {
+    "id": "redshift",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON REDSHIFT",
+    "standsFor": "",
+    "description": "Managed data warehouse, OLAP (Online Analytical Processing).",
+    "description_en": "Fast, simple, cost-effective data warehousing service.",
+    "key_feature": "Petabyte-scale data warehousing using standard SQL"
+  },
+  {
+    "id": "neptune",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON NEPTUNE",
+    "standsFor": "",
+    "description": "Managed graph database.",
+    "description_en": "Fast, reliable, fully managed graph database service.",
+    "key_feature": "Purpose-built for highly connected datasets"
+  },
+  {
+    "id": "documentdb",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON DOCUMENTDB",
+    "standsFor": "",
+    "description": "Managed MongoDB-compatible database.",
+    "description_en": "Fully managed document database service that supports MongoDB workloads.",
+    "key_feature": "MongoDB compatibility at cloud scale"
+  },
+  {
+    "id": "keyspaces",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON KEYSPACES",
+    "standsFor": "",
+    "description": "Managed Apache Cassandra-compatible database.",
+    "description_en": "A service or concept within AWS commonly known as AMAZON KEYSPACES.",
+    "key_feature": "Related to amazon keyspaces workloads."
+  },
+  {
+    "id": "qldb",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON QLDB",
+    "standsFor": "",
+    "description": "Quantum Ledger Database, immutable, cryptographically verifiable.",
+    "description_en": "A service or concept within AWS commonly known as AMAZON QLDB.",
+    "key_feature": "Related to amazon qldb workloads."
+  },
+  {
+    "id": "timestream",
+    "group": "DATABASE SERVICES -",
+    "name": "AMAZON TIMESTREAM",
+    "standsFor": "",
+    "description": "Managed time-series database.",
+    "description_en": "A service or concept within AWS commonly known as AMAZON TIMESTREAM.",
+    "key_feature": "Related to amazon timestream workloads."
+  },
+  {
+    "id": "1️⃣-database-migration-service",
+    "group": "DATABASE SERVICES -",
+    "name": "1️⃣ AWS DATABASE MIGRATION SERVICE",
+    "standsFor": "DMS",
+    "description": "Migrate databases to AWS with minimal downtime.",
+    "description_en": "A service or concept within AWS commonly known as 1️⃣ AWS DATABASE MIGRATION SERVICE.",
+    "key_feature": "Related to 1️⃣ aws database migration service workloads."
+  },
+  {
+    "id": "database-selection-decision-tree",
+    "group": "DATABASE SERVICES -",
+    "name": "DATABASE SELECTION DECISION TREE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as DATABASE SELECTION DECISION TREE.",
+    "key_feature": "Related to database selection decision tree workloads."
+  },
+  {
+    "id": "vpc",
+    "group": "NETWORKING SERVICES -",
+    "name": "AMAZON VPC",
+    "standsFor": "Virtual Private Cloud",
+    "description": "Isolated virtual network trong AWS. Foundation của mọi kiến trúc.",
+    "description_en": "Logically isolated virtual network that you define.",
+    "key_feature": "Complete control over your virtual networking environment"
+  },
+  {
+    "id": "elastic-load-balancing",
+    "group": "NETWORKING SERVICES -",
+    "name": "ELASTIC LOAD BALANCING",
+    "standsFor": "ELB",
+    "description": "Distribute traffic across multiple targets (EC2, containers, IPs).",
+    "description_en": "Automatically distributes incoming application traffic across multiple targets.",
+    "key_feature": "Enhances fault tolerance of applications"
+  },
+  {
+    "id": "route-53",
+    "group": "NETWORKING SERVICES -",
+    "name": "AMAZON ROUTE 53",
+    "standsFor": "",
+    "description": "Managed DNS service (Domain Name System).",
+    "description_en": "Highly available and scalable cloud Domain Name System (DNS) web service.",
+    "key_feature": "Domain registration, DNS routing, and health checking"
+  },
+  {
+    "id": "cloudfront",
+    "group": "NETWORKING SERVICES -",
+    "name": "AMAZON CLOUDFRONT",
+    "standsFor": "",
+    "description": "Content Delivery Network (CDN), distribute content globally.",
+    "description_en": "Fast, highly secure and programmable content delivery network (CDN).",
+    "key_feature": "Global edge network for low-latency content delivery"
+  },
+  {
+    "id": "global-accelerator",
+    "group": "NETWORKING SERVICES -",
+    "name": "AWS GLOBAL ACCELERATOR",
+    "standsFor": "",
+    "description": "Improve global application availability and performance using AWS global network.",
+    "description_en": "Networking service that improves the performance of your users' traffic by up to 60%.",
+    "key_feature": "Uses AWS global network to route traffic to optimal endpoints"
+  },
+  {
+    "id": "api-gateway",
+    "group": "NETWORKING SERVICES -",
+    "name": "AWS API GATEWAY",
+    "standsFor": "",
+    "description": "Managed service to create, publish, maintain APIs.",
+    "description_en": "Fully managed service that makes it easy to create, publish, maintain, monitor, and secure APIs.",
+    "key_feature": "Handles API request throttling, validation, and authorization"
+  },
+  {
+    "id": "privatelink",
+    "group": "NETWORKING SERVICES -",
+    "name": "AWS PRIVATELINK",
+    "standsFor": "",
+    "description": "Private connectivity to services (VPC Endpoint Services).",
+    "description_en": "A service or concept within AWS commonly known as AWS PRIVATELINK.",
+    "key_feature": "Related to aws privatelink workloads."
+  },
+  {
+    "id": "cloud-wan",
+    "group": "NETWORKING SERVICES -",
+    "name": "AWS CLOUD WAN",
+    "standsFor": "",
+    "description": "Managed wide-area network, connect on-premises and AWS.",
+    "description_en": "A service or concept within AWS commonly known as AWS CLOUD WAN.",
+    "key_feature": "Related to aws cloud wan workloads."
+  },
+  {
+    "id": "iam",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS IAM",
+    "standsFor": "Identity and Access Management",
+    "description": "Manage access to AWS resources. **Free service**, global.",
+    "description_en": "Enables you to manage access to AWS services and resources securely.",
+    "key_feature": "Granular permissions via IAM policies"
+  },
+  {
+    "id": "kms",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS KMS",
+    "standsFor": "Key Management Service",
+    "description": "Managed encryption service, create and control encryption keys.",
+    "description_en": "Creates and manages cryptographic keys and controls their use across AWS services.",
+    "key_feature": "Centralized key management and symmetric/asymmetric encryption"
+  },
+  {
+    "id": "secrets-manager",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS SECRETS MANAGER",
+    "standsFor": "",
+    "description": "Store and rotate secrets (passwords, API keys, tokens).",
+    "description_en": "Helps you protect secrets needed to access your applications, services, and IT resources.",
+    "key_feature": "Automated secret rotation"
+  },
+  {
+    "id": "certificate-manager",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS CERTIFICATE MANAGER",
+    "standsFor": "ACM",
+    "description": "Provision, manage, deploy SSL/TLS certificates.",
+    "description_en": "A service or concept within AWS commonly known as AWS CERTIFICATE MANAGER.",
+    "key_feature": "Related to aws certificate manager workloads."
+  },
+  {
+    "id": "cloudtrail",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS CLOUDTRAIL",
+    "standsFor": "",
+    "description": "Audit log, records AWS API calls.",
+    "description_en": "Enables governance, compliance, operational auditing, and risk auditing of your AWS account.",
+    "key_feature": "Logs all API calls across the AWS infrastructure"
+  },
+  {
+    "id": "cloudwatch",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS CLOUDWATCH",
+    "standsFor": "",
+    "description": "Monitoring and observability service.",
+    "description_en": "Monitoring and observability service built for DevOps engineers, developers, and IT managers.",
+    "key_feature": "Metrics collection, alarms, and log management"
+  },
+  {
+    "id": "config",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS CONFIG",
+    "standsFor": "",
+    "description": "Track resource configurations and compliance.",
+    "description_en": "A service or concept within AWS commonly known as AWS CONFIG.",
+    "key_feature": "Related to aws config workloads."
+  },
+  {
+    "id": "guardduty",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS GUARDDUTY",
+    "standsFor": "",
+    "description": "Intelligent threat detection, ML-based.",
+    "description_en": "A service or concept within AWS commonly known as AWS GUARDDUTY.",
+    "key_feature": "Related to aws guardduty workloads."
+  },
+  {
+    "id": "inspector",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS INSPECTOR",
+    "standsFor": "",
+    "description": "Automated security assessment.",
+    "description_en": "A service or concept within AWS commonly known as AWS INSPECTOR.",
+    "key_feature": "Related to aws inspector workloads."
+  },
+  {
+    "id": "macie",
+    "group": "SECURITY SERVICES -",
+    "name": "AWS MACIE",
+    "standsFor": "",
+    "description": "Discover and protect sensitive data in S3 using ML.",
+    "description_en": "A service or concept within AWS commonly known as AWS MACIE.",
+    "key_feature": "Related to aws macie workloads."
+  },
+  {
+    "id": "1️⃣-security-hub",
+    "group": "SECURITY SERVICES -",
+    "name": "1️⃣ AWS SECURITY HUB",
+    "standsFor": "",
+    "description": "Central security dashboard, aggregates findings.",
+    "description_en": "A service or concept within AWS commonly known as 1️⃣ AWS SECURITY HUB.",
+    "key_feature": "Related to 1️⃣ aws security hub workloads."
+  },
+  {
+    "id": "2️⃣-waf",
+    "group": "SECURITY SERVICES -",
+    "name": "2️⃣ AWS WAF",
+    "standsFor": "Web Application Firewall",
+    "description": "Protect web applications from common exploits.",
+    "description_en": "A service or concept within AWS commonly known as 2️⃣ AWS WAF.",
+    "key_feature": "Related to 2️⃣ aws waf workloads."
+  },
+  {
+    "id": "3️⃣-shield",
+    "group": "SECURITY SERVICES -",
+    "name": "3️⃣ AWS SHIELD",
+    "standsFor": "",
+    "description": "DDoS protection.",
+    "description_en": "A service or concept within AWS commonly known as 3️⃣ AWS SHIELD.",
+    "key_feature": "Related to 3️⃣ aws shield workloads."
+  },
+  {
+    "id": "4️⃣-firewall-manager",
+    "group": "SECURITY SERVICES -",
+    "name": "4️⃣ AWS FIREWALL MANAGER",
+    "standsFor": "",
+    "description": "Centrally manage firewall rules across accounts.",
+    "description_en": "A service or concept within AWS commonly known as 4️⃣ AWS FIREWALL MANAGER.",
+    "key_feature": "Related to 4️⃣ aws firewall manager workloads."
+  },
+  {
+    "id": "5️⃣-cognito",
+    "group": "SECURITY SERVICES -",
+    "name": "5️⃣ AMAZON COGNITO",
+    "standsFor": "",
+    "description": "User authentication and authorization for web/mobile apps.",
+    "description_en": "Lets you add user sign-up, sign-in, and access control to your web and mobile apps.",
+    "key_feature": "Identity management for external application users"
+  },
+  {
+    "id": "6️⃣-directory-service",
+    "group": "SECURITY SERVICES -",
+    "name": "6️⃣ AWS DIRECTORY SERVICE",
+    "standsFor": "",
+    "description": "Managed Microsoft Active Directory.",
+    "description_en": "A service or concept within AWS commonly known as 6️⃣ AWS DIRECTORY SERVICE.",
+    "key_feature": "Related to 6️⃣ aws directory service workloads."
+  },
+  {
+    "id": "7️⃣-single-sign-on-(sso)-/-iam-identity-center",
+    "group": "SECURITY SERVICES -",
+    "name": "7️⃣ AWS SINGLE SIGN-ON (SSO) / IAM IDENTITY CENTER",
+    "standsFor": "",
+    "description": "**IAM Identity Center** (formerly SSO) = Centralized access to AWS accounts and applications.",
+    "description_en": "Enables you to manage access to AWS services and resources securely.",
+    "key_feature": "Granular permissions via IAM policies"
+  },
+  {
+    "id": "cloudformation",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS CLOUDFORMATION",
+    "standsFor": "",
+    "description": "Infrastructure as Code (IaC), define resources in templates.",
+    "description_en": "Provides a common language to model and provision AWS and third-party application resources.",
+    "key_feature": "Infrastructure as Code (IaC)"
+  },
+  {
+    "id": "systems-manager",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS SYSTEMS MANAGER",
+    "standsFor": "SSM",
+    "description": "Manage EC2 and on-premises at scale.",
+    "description_en": "Operations hub for your AWS applications and resources.",
+    "key_feature": "Automated fleet management and patching (SSM)"
+  },
+  {
+    "id": "organizations",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS ORGANIZATIONS",
+    "standsFor": "",
+    "description": "Manage multiple AWS accounts centrally.",
+    "description_en": "Helps you centrally manage and govern your environment as you grow and scale your AWS resources.",
+    "key_feature": "Consolidated billing and Service Control Policies (SCPs)"
+  },
+  {
+    "id": "control-tower",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS CONTROL TOWER",
+    "standsFor": "",
+    "description": "Setup multi-account environment with best practices.",
+    "description_en": "A service or concept within AWS commonly known as AWS CONTROL TOWER.",
+    "key_feature": "Related to aws control tower workloads."
+  },
+  {
+    "id": "service-catalog",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS SERVICE CATALOG",
+    "standsFor": "",
+    "description": "Create and manage approved product catalogs.",
+    "description_en": "A service or concept within AWS commonly known as AWS SERVICE CATALOG.",
+    "key_feature": "Related to aws service catalog workloads."
+  },
+  {
+    "id": "trusted-advisor",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS TRUSTED ADVISOR",
+    "standsFor": "",
+    "description": "Best practice recommendations.",
+    "description_en": "A service or concept within AWS commonly known as AWS TRUSTED ADVISOR.",
+    "key_feature": "Related to aws trusted advisor workloads."
+  },
+  {
+    "id": "health-dashboard",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS HEALTH DASHBOARD",
+    "standsFor": "",
+    "description": "Service health and notifications.",
+    "description_en": "A service or concept within AWS commonly known as AWS HEALTH DASHBOARD.",
+    "key_feature": "Related to aws health dashboard workloads."
+  },
+  {
+    "id": "license-manager",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS LICENSE MANAGER",
+    "standsFor": "",
+    "description": "Manage software licenses.",
+    "description_en": "A service or concept within AWS commonly known as AWS LICENSE MANAGER.",
+    "key_feature": "Related to aws license manager workloads."
+  },
+  {
+    "id": "compute-optimizer",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS COMPUTE OPTIMIZER",
+    "standsFor": "",
+    "description": "ML-based resource optimization recommendations.",
+    "description_en": "A service or concept within AWS commonly known as AWS COMPUTE OPTIMIZER.",
+    "key_feature": "Related to aws compute optimizer workloads."
+  },
+  {
+    "id": "cost-explorer-&-budgets",
+    "group": "MANAGEMENT  GOVERNANCE -",
+    "name": "AWS COST EXPLORER & BUDGETS",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS COST EXPLORER & BUDGETS.",
+    "key_feature": "Related to aws cost explorer & budgets workloads."
+  },
+  {
+    "id": "sqs",
+    "group": "APPLICATION INTEGRATION -",
+    "name": "AMAZON SQS",
+    "standsFor": "Simple Queue Service",
+    "description": "Managed message queue service, decouple applications.",
+    "description_en": "Fully managed message queuing service that enables you to decouple and scale microservices.",
+    "key_feature": "Standard and FIFO messaging queues"
+  },
+  {
+    "id": "sns",
+    "group": "APPLICATION INTEGRATION -",
+    "name": "AMAZON SNS",
+    "standsFor": "Simple Notification Service",
+    "description": "Pub/Sub messaging service, send messages to multiple subscribers.",
+    "description_en": "Fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.",
+    "key_feature": "Pub/Sub messaging and mobile push notifications"
+  },
+  {
+    "id": "eventbridge",
+    "group": "APPLICATION INTEGRATION -",
+    "name": "AMAZON EVENTBRIDGE",
+    "standsFor": "CloudWatch Events",
+    "description": "Event bus service, route events to targets.",
+    "description_en": "Serverless event bus that makes it easier to build event-driven applications at scale.",
+    "key_feature": "Seamless routing of events to various AWS targets"
+  },
+  {
+    "id": "step-functions",
+    "group": "APPLICATION INTEGRATION -",
+    "name": "AWS STEP FUNCTIONS",
+    "standsFor": "",
+    "description": "Orchestrate workflows, coordinate distributed applications.",
+    "description_en": "Serverless visual workflow service used to orchestrate AWS services, automate business processes, and build serverless applications.",
+    "key_feature": "Visual state machine orchestration"
+  },
+  {
+    "id": "mq",
+    "group": "APPLICATION INTEGRATION -",
+    "name": "AMAZON MQ",
+    "standsFor": "",
+    "description": "Managed message broker (ActiveMQ, RabbitMQ).",
+    "description_en": "A service or concept within AWS commonly known as AMAZON MQ.",
+    "key_feature": "Related to amazon mq workloads."
+  },
+  {
+    "id": "appflow",
+    "group": "APPLICATION INTEGRATION -",
+    "name": "AWS APPFLOW",
+    "standsFor": "",
+    "description": "Integrate SaaS applications with AWS services.",
+    "description_en": "A service or concept within AWS commonly known as AWS APPFLOW.",
+    "key_feature": "Related to aws appflow workloads."
+  },
+  {
+    "id": "codecommit",
+    "group": "DEVELOPER TOOLS -",
+    "name": "AWS CODECOMMIT",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS CODECOMMIT.",
+    "key_feature": "Related to aws codecommit workloads."
+  },
+  {
+    "id": "codebuild",
+    "group": "DEVELOPER TOOLS -",
+    "name": "AWS CODEBUILD",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS CODEBUILD.",
+    "key_feature": "Related to aws codebuild workloads."
+  },
+  {
+    "id": "codedeploy",
+    "group": "DEVELOPER TOOLS -",
+    "name": "AWS CODEDEPLOY",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS CODEDEPLOY.",
+    "key_feature": "Related to aws codedeploy workloads."
+  },
+  {
+    "id": "codepipeline",
+    "group": "DEVELOPER TOOLS -",
+    "name": "AWS CODEPIPELINE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS CODEPIPELINE.",
+    "key_feature": "Related to aws codepipeline workloads."
+  },
+  {
+    "id": "codeartifact",
+    "group": "DEVELOPER TOOLS -",
+    "name": "AWS CODEARTIFACT",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS CODEARTIFACT.",
+    "key_feature": "Related to aws codeartifact workloads."
+  },
+  {
+    "id": "codeguru",
+    "group": "DEVELOPER TOOLS -",
+    "name": "AWS CODEGURU",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS CODEGURU.",
+    "key_feature": "Related to aws codeguru workloads."
+  },
+  {
+    "id": "kinesis",
+    "group": "ANALYTICS  BIG DATA -",
+    "name": "AMAZON KINESIS",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Makes it easy to collect, process, and analyze real-time, streaming data.",
+    "key_feature": "Real-time stream processing for big data"
+  },
+  {
+    "id": "athena",
+    "group": "ANALYTICS  BIG DATA -",
+    "name": "AMAZON ATHENA",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL.",
+    "key_feature": "Serverless analytics running directly on S3 data"
+  },
+  {
+    "id": "glue",
+    "group": "ANALYTICS  BIG DATA -",
+    "name": "AWS GLUE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Serverless data integration service that makes it easy to discover, prepare, and combine data.",
+    "key_feature": "Fully managed ETL (Extract, Transform, and Load) service"
+  },
+  {
+    "id": "emr",
+    "group": "ANALYTICS  BIG DATA -",
+    "name": "AMAZON EMR",
+    "standsFor": "Elastic MapReduce",
+    "description": "Managed Hadoop/Spark cluster.",
+    "description_en": "Cloud big data platform for running large-scale distributed data processing jobs.",
+    "key_feature": "Managed Hadoop, Spark, and HBase frameworks"
+  },
+  {
+    "id": "opensearch",
+    "group": "ANALYTICS  BIG DATA -",
+    "name": "AMAZON OPENSEARCH",
+    "standsFor": "Elasticsearch",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON OPENSEARCH.",
+    "key_feature": "Related to amazon opensearch workloads."
+  },
+  {
+    "id": "quicksight",
+    "group": "ANALYTICS  BIG DATA -",
+    "name": "AMAZON QUICKSIGHT",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON QUICKSIGHT.",
+    "key_feature": "Related to amazon quicksight workloads."
+  },
+  {
+    "id": "data-pipeline",
+    "group": "ANALYTICS  BIG DATA -",
+    "name": "AWS DATA PIPELINE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS DATA PIPELINE.",
+    "key_feature": "Related to aws data pipeline workloads."
+  },
+  {
+    "id": "lake-formation",
+    "group": "ANALYTICS  BIG DATA -",
+    "name": "AWS LAKE FORMATION",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS LAKE FORMATION.",
+    "key_feature": "Related to aws lake formation workloads."
+  },
+  {
+    "id": "dms",
+    "group": "MIGRATION  TRANSFER -",
+    "name": "AWS DMS",
+    "standsFor": "Database Migration Service",
+    "description": "Migrate databases với minimal downtime.",
+    "description_en": "A service or concept within AWS commonly known as AWS DMS.",
+    "key_feature": "Related to aws dms workloads."
+  },
+  {
+    "id": "snow-family",
+    "group": "MIGRATION  TRANSFER -",
+    "name": "AWS SNOW FAMILY",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Physical devices used to migrate large amounts of data into and out of AWS.",
+    "key_feature": "Offline data transfer for petabyte-scale data"
+  },
+  {
+    "id": "datasync",
+    "group": "MIGRATION  TRANSFER -",
+    "name": "AWS DATASYNC",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Secure online service that automates and accelerates moving data between on-premises and AWS storage services.",
+    "key_feature": "Automated, accelerated data transfer"
+  },
+  {
+    "id": "transfer-family",
+    "group": "MIGRATION  TRANSFER -",
+    "name": "AWS TRANSFER FAMILY",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS TRANSFER FAMILY.",
+    "key_feature": "Related to aws transfer family workloads."
+  },
+  {
+    "id": "application-migration-service",
+    "group": "MIGRATION  TRANSFER -",
+    "name": "AWS APPLICATION MIGRATION SERVICE",
+    "standsFor": "MGN",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS APPLICATION MIGRATION SERVICE.",
+    "key_feature": "Related to aws application migration service workloads."
+  },
+  {
+    "id": "migration-hub",
+    "group": "MIGRATION  TRANSFER -",
+    "name": "AWS MIGRATION HUB",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS MIGRATION HUB.",
+    "key_feature": "Related to aws migration hub workloads."
+  },
+  {
+    "id": "api-gateway",
+    "group": "API  INTEGRATION -",
+    "name": "AMAZON API GATEWAY",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Fully managed service that makes it easy to create, publish, maintain, monitor, and secure APIs.",
+    "key_feature": "Handles API request throttling, validation, and authorization"
+  },
+  {
+    "id": "appsync",
+    "group": "API  INTEGRATION -",
+    "name": "AWS APPSYNC",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS APPSYNC.",
+    "key_feature": "Related to aws appsync workloads."
+  },
+  {
+    "id": "ses",
+    "group": "API  INTEGRATION -",
+    "name": "AMAZON SES",
+    "standsFor": "Simple Email Service",
+    "description": "Send and receive emails.",
+    "description_en": "A service or concept within AWS commonly known as AMAZON SES.",
+    "key_feature": "Related to amazon ses workloads."
+  },
+  {
+    "id": "pinpoint",
+    "group": "API  INTEGRATION -",
+    "name": "AMAZON PINPOINT",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON PINPOINT.",
+    "key_feature": "Related to amazon pinpoint workloads."
+  },
+  {
+    "id": "sagemaker",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON SAGEMAKER",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Fully managed service that provides every developer and data scientist with the ability to build, train, and deploy ML models.",
+    "key_feature": "Complete machine learning workflow service"
+  },
+  {
+    "id": "rekognition",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON REKOGNITION",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON REKOGNITION.",
+    "key_feature": "Related to amazon rekognition workloads."
+  },
+  {
+    "id": "comprehend",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON COMPREHEND",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON COMPREHEND.",
+    "key_feature": "Related to amazon comprehend workloads."
+  },
+  {
+    "id": "transcribe",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON TRANSCRIBE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON TRANSCRIBE.",
+    "key_feature": "Related to amazon transcribe workloads."
+  },
+  {
+    "id": "polly",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON POLLY",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON POLLY.",
+    "key_feature": "Related to amazon polly workloads."
+  },
+  {
+    "id": "translate",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON TRANSLATE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON TRANSLATE.",
+    "key_feature": "Related to amazon translate workloads."
+  },
+  {
+    "id": "lex",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON LEX",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON LEX.",
+    "key_feature": "Related to amazon lex workloads."
+  },
+  {
+    "id": "forecast",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON FORECAST",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON FORECAST.",
+    "key_feature": "Related to amazon forecast workloads."
+  },
+  {
+    "id": "personalize",
+    "group": "ML  AI SERVICES -",
+    "name": "AMAZON PERSONALIZE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON PERSONALIZE.",
+    "key_feature": "Related to amazon personalize workloads."
+  },
+  {
+    "id": "ml/ai-quick-reference",
+    "group": "ML  AI SERVICES -",
+    "name": "ML/AI QUICK REFERENCE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as ML/AI QUICK REFERENCE.",
+    "key_feature": "Related to ml/ai quick reference workloads."
+  },
+  {
+    "id": "workspaces",
+    "group": "OTHER SERVICES -",
+    "name": "AMAZON WORKSPACES",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON WORKSPACES.",
+    "key_feature": "Related to amazon workspaces workloads."
+  },
+  {
+    "id": "appstream-2.0",
+    "group": "OTHER SERVICES -",
+    "name": "AMAZON APPSTREAM 2.0",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON APPSTREAM 2.0.",
+    "key_feature": "Related to amazon appstream 2.0 workloads."
+  },
+  {
+    "id": "iot-core",
+    "group": "OTHER SERVICES -",
+    "name": "AWS IOT CORE",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS IOT CORE.",
+    "key_feature": "Related to aws iot core workloads."
+  },
+  {
+    "id": "mechanical-turk",
+    "group": "OTHER SERVICES -",
+    "name": "AMAZON MECHANICAL TURK",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AMAZON MECHANICAL TURK.",
+    "key_feature": "Related to amazon mechanical turk workloads."
+  },
+  {
+    "id": "ground-station",
+    "group": "OTHER SERVICES -",
+    "name": "AWS GROUND STATION",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS GROUND STATION.",
+    "key_feature": "Related to aws ground station workloads."
+  },
+  {
+    "id": "outposts",
+    "group": "OTHER SERVICES -",
+    "name": "AWS OUTPOSTS",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS OUTPOSTS.",
+    "key_feature": "Related to aws outposts workloads."
+  },
+  {
+    "id": "wavelength",
+    "group": "OTHER SERVICES -",
+    "name": "AWS WAVELENGTH",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS WAVELENGTH.",
+    "key_feature": "Related to aws wavelength workloads."
+  },
+  {
+    "id": "local-zones",
+    "group": "OTHER SERVICES -",
+    "name": "AWS LOCAL ZONES",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS LOCAL ZONES.",
+    "key_feature": "Related to aws local zones workloads."
+  },
+  {
+    "id": "backup",
+    "group": "OTHER SERVICES -",
+    "name": "AWS BACKUP",
+    "standsFor": "",
+    "description": "",
+    "description_en": "A service or concept within AWS commonly known as AWS BACKUP.",
+    "key_feature": "Related to aws backup workloads."
+  },
+  {
+    "id": "eventbridge-scheduler",
+    "group": "OTHER SERVICES -",
+    "name": "AMAZON EVENTBRIDGE SCHEDULER",
+    "standsFor": "",
+    "description": "",
+    "description_en": "Serverless event bus that makes it easier to build event-driven applications at scale.",
+    "key_feature": "Seamless routing of events to various AWS targets"
+  }
+]

@@ -4,9 +4,10 @@ import ProgressDashboard from './ProgressDashboard';
 interface DashboardProps {
   questions: Question[];
   onStartQuiz: (questions: Question[]) => void;
+  onOpenRevision?: () => void;
 }
 
-function Dashboard({ questions, onStartQuiz }: DashboardProps) {
+function Dashboard({ questions, onStartQuiz, onOpenRevision }: DashboardProps) {
   const totalQuestions = questions.length;
   const setsOf50 = Math.ceil(totalQuestions / 50);
 
@@ -51,6 +52,13 @@ function Dashboard({ questions, onStartQuiz }: DashboardProps) {
       {/* Quick Start */}
       <div className="dashboard__section-title">⚡ Quick Start</div>
       <div className="dashboard__quick-actions">
+        {onOpenRevision && (
+          <button className="quick-btn" onClick={onOpenRevision} style={{ background: 'var(--surface-light)', borderColor: 'var(--accent-secondary)' }}>
+            <span className="quick-btn__icon">📚</span>
+            Quick Revision
+            <span className="quick-btn__label">Cheat sheet & Flashcards</span>
+          </button>
+        )}
         <button className="quick-btn" onClick={() => startRandomQuiz(10)}>
           <span className="quick-btn__icon">🎯</span>
           10 Questions

@@ -1,0 +1,1114 @@
+{
+  "keywords": [
+    {
+      "category": "🎯 Cost Optimization Keywords",
+      "keywords": [
+        {
+          "Keyword": "most cost-effective",
+          "AWS Service": "Reserved Instances, Spot, S3 Intelligent-Tiering",
+          "Explanation": "Commitment hoặc flexible pricing"
+        },
+        {
+          "Keyword": "minimize cost",
+          "AWS Service": "S3 Glacier, Spot Instances, Lambda",
+          "Explanation": "Cheapest options"
+        },
+        {
+          "Keyword": "unpredictable workload",
+          "AWS Service": "Auto Scaling, Lambda, On-Demand",
+          "Explanation": "Pay for what you use"
+        },
+        {
+          "Keyword": "steady-state workload",
+          "AWS Service": "Reserved Instances, Savings Plans",
+          "Explanation": "Predictable = commit for discount"
+        },
+        {
+          "Keyword": "fault-tolerant workload",
+          "AWS Service": "Spot Instances",
+          "Explanation": "Can tolerate interruptions"
+        },
+        {
+          "Keyword": "infrequent access",
+          "AWS Service": "S3 Standard-IA, S3 One Zone-IA",
+          "Explanation": "Lower storage cost"
+        },
+        {
+          "Keyword": "archive",
+          "AWS Service": "S3 Glacier, Glacier Deep Archive",
+          "Explanation": "Long-term, rare access"
+        },
+        {
+          "Keyword": "pay per request",
+          "AWS Service": "Lambda, DynamoDB On-Demand, API Gateway",
+          "Explanation": "No idle cost"
+        }
+      ]
+    },
+    {
+      "category": "⚡ Performance Keywords",
+      "keywords": [
+        {
+          "Keyword": "lowest latency",
+          "AWS Service": "CloudFront, ElastiCache, DynamoDB DAX",
+          "Explanation": "Caching, CDN"
+        },
+        {
+          "Keyword": "microsecond latency",
+          "AWS Service": "DynamoDB DAX",
+          "Explanation": "Sub-millisecond"
+        },
+        {
+          "Keyword": "millisecond latency",
+          "AWS Service": "DynamoDB, ElastiCache",
+          "Explanation": "In-memory"
+        },
+        {
+          "Keyword": "high IOPS",
+          "AWS Service": "EBS io2, io2 Block Express",
+          "Explanation": "Provisioned IOPS SSD"
+        },
+        {
+          "Keyword": "high throughput",
+          "AWS Service": "EBS st1, S3 Transfer Acceleration",
+          "Explanation": "Optimized for throughput"
+        },
+        {
+          "Keyword": "real-time",
+          "AWS Service": "Kinesis Data Streams, DynamoDB Streams",
+          "Explanation": "Stream processing"
+        },
+        {
+          "Keyword": "batch processing",
+          "AWS Service": "AWS Batch, EMR, Spot Instances",
+          "Explanation": "Large-scale compute"
+        },
+        {
+          "Keyword": "millions of requests",
+          "AWS Service": "NLB, DynamoDB, Lambda",
+          "Explanation": "High scalability"
+        }
+      ]
+    },
+    {
+      "category": "🔐 Security Keywords",
+      "keywords": [
+        {
+          "Keyword": "encryption at rest",
+          "AWS Service": "KMS, S3 SSE, EBS encryption",
+          "Explanation": "Data stored encrypted"
+        },
+        {
+          "Keyword": "encryption in transit",
+          "AWS Service": "TLS/SSL, ACM, VPN",
+          "Explanation": "Data transmitted encrypted"
+        },
+        {
+          "Keyword": "audit API calls",
+          "AWS Service": "CloudTrail",
+          "Explanation": "Who did what, when"
+        },
+        {
+          "Keyword": "track configuration changes",
+          "AWS Service": "AWS Config",
+          "Explanation": "Resource config history"
+        },
+        {
+          "Keyword": "detect threats",
+          "AWS Service": "GuardDuty",
+          "Explanation": "ML-based threat detection"
+        },
+        {
+          "Keyword": "web application firewall",
+          "AWS Service": "AWS WAF",
+          "Explanation": "Protect against exploits"
+        },
+        {
+          "Keyword": "DDoS protection",
+          "AWS Service": "AWS Shield",
+          "Explanation": "Layer 3/4/7 protection"
+        },
+        {
+          "Keyword": "PII detection",
+          "AWS Service": "Macie",
+          "Explanation": "Sensitive data discovery"
+        },
+        {
+          "Keyword": "secrets rotation",
+          "AWS Service": "Secrets Manager",
+          "Explanation": "Automatic rotation"
+        },
+        {
+          "Keyword": "least privilege",
+          "AWS Service": "IAM Policies, Roles",
+          "Explanation": "Minimal permissions"
+        }
+      ]
+    },
+    {
+      "category": "🏗️ High Availability Keywords",
+      "keywords": [
+        {
+          "Keyword": "highly available",
+          "AWS Service": "Multi-AZ, Auto Scaling, ELB",
+          "Explanation": "No single point of failure"
+        },
+        {
+          "Keyword": "automatic failover",
+          "AWS Service": "RDS Multi-AZ, Aurora, Route 53",
+          "Explanation": "Auto-recovery"
+        },
+        {
+          "Keyword": "fault tolerant",
+          "AWS Service": "Multi-AZ, Multi-Region",
+          "Explanation": "Withstand failures"
+        },
+        {
+          "Keyword": "disaster recovery",
+          "AWS Service": "S3 CRR, Aurora Global, Backup",
+          "Explanation": "Cross-region replication"
+        },
+        {
+          "Keyword": "99.99% availability",
+          "AWS Service": "Multi-AZ deployments",
+          "Explanation": "4 nines SLA"
+        },
+        {
+          "Keyword": "zero downtime",
+          "AWS Service": "Blue/Green deployment, Aurora",
+          "Explanation": "No service interruption"
+        },
+        {
+          "Keyword": "self-healing",
+          "AWS Service": "Auto Scaling, Aurora storage",
+          "Explanation": "Automatic recovery"
+        }
+      ]
+    },
+    {
+      "category": "🚀 Serverless Keywords",
+      "keywords": [
+        {
+          "Keyword": "serverless",
+          "AWS Service": "Lambda, Fargate, Aurora Serverless",
+          "Explanation": "No server management"
+        },
+        {
+          "Keyword": "no infrastructure management",
+          "AWS Service": "Lambda, DynamoDB, S3",
+          "Explanation": "Fully managed"
+        },
+        {
+          "Keyword": "auto-scaling",
+          "AWS Service": "Lambda, DynamoDB, Aurora Serverless",
+          "Explanation": "Automatic capacity"
+        },
+        {
+          "Keyword": "event-driven",
+          "AWS Service": "Lambda, EventBridge, Step Functions",
+          "Explanation": "Triggered by events"
+        },
+        {
+          "Keyword": "short-lived functions",
+          "AWS Service": "Lambda",
+          "Explanation": "< 15 minutes"
+        },
+        {
+          "Keyword": "pay per invocation",
+          "AWS Service": "Lambda",
+          "Explanation": "Per-request billing"
+        }
+      ]
+    },
+    {
+      "category": "🌍 Global Keywords",
+      "keywords": [
+        {
+          "Keyword": "global users",
+          "AWS Service": "CloudFront, Global Accelerator",
+          "Explanation": "Edge locations"
+        },
+        {
+          "Keyword": "multi-region",
+          "AWS Service": "S3 CRR, Aurora Global, DynamoDB Global Tables",
+          "Explanation": "Cross-region"
+        },
+        {
+          "Keyword": "lowest latency globally",
+          "AWS Service": "CloudFront, Route 53 Latency Routing",
+          "Explanation": "Nearest edge"
+        },
+        {
+          "Keyword": "active-active",
+          "AWS Service": "DynamoDB Global Tables, Aurora Global",
+          "Explanation": "Multi-region writes"
+        },
+        {
+          "Keyword": "disaster recovery",
+          "AWS Service": "Cross-region replication, Pilot Light",
+          "Explanation": "Secondary region"
+        }
+      ]
+    },
+    {
+      "category": "🔄 Integration Keywords",
+      "keywords": [
+        {
+          "Keyword": "decouple",
+          "AWS Service": "SQS, SNS, EventBridge",
+          "Explanation": "Loose coupling"
+        },
+        {
+          "Keyword": "asynchronous",
+          "AWS Service": "SQS, SNS, Lambda async",
+          "Explanation": "Non-blocking"
+        },
+        {
+          "Keyword": "message queue",
+          "AWS Service": "SQS",
+          "Explanation": "Buffer between services"
+        },
+        {
+          "Keyword": "pub/sub",
+          "AWS Service": "SNS",
+          "Explanation": "One-to-many messaging"
+        },
+        {
+          "Keyword": "workflow orchestration",
+          "AWS Service": "Step Functions",
+          "Explanation": "Coordinate services"
+        },
+        {
+          "Keyword": "API management",
+          "AWS Service": "API Gateway",
+          "Explanation": "RESTful APIs"
+        },
+        {
+          "Keyword": "event bus",
+          "AWS Service": "EventBridge",
+          "Explanation": "Event routing"
+        }
+      ]
+    },
+    {
+      "category": "💾 Storage Keywords",
+      "keywords": [
+        {
+          "Keyword": "object storage",
+          "AWS Service": "S3",
+          "Explanation": "Files, images, videos"
+        },
+        {
+          "Keyword": "block storage",
+          "AWS Service": "EBS",
+          "Explanation": "EC2 volumes"
+        },
+        {
+          "Keyword": "file storage",
+          "AWS Service": "EFS, FSx",
+          "Explanation": "Shared file systems"
+        },
+        {
+          "Keyword": "shared storage",
+          "AWS Service": "EFS, FSx",
+          "Explanation": "Multi-instance access"
+        },
+        {
+          "Keyword": "lifecycle policies",
+          "AWS Service": "S3 Lifecycle",
+          "Explanation": "Auto-tiering"
+        },
+        {
+          "Keyword": "versioning",
+          "AWS Service": "S3 Versioning",
+          "Explanation": "Multiple versions"
+        },
+        {
+          "Keyword": "durability 11 nines",
+          "AWS Service": "S3",
+          "Explanation": "99.999999999%"
+        }
+      ]
+    },
+    {
+      "category": "🗄️ Database Keywords",
+      "keywords": [
+        {
+          "Keyword": "relational database",
+          "AWS Service": "RDS, Aurora",
+          "Explanation": "SQL databases"
+        },
+        {
+          "Keyword": "NoSQL",
+          "AWS Service": "DynamoDB, DocumentDB",
+          "Explanation": "Non-relational"
+        },
+        {
+          "Keyword": "in-memory",
+          "AWS Service": "ElastiCache",
+          "Explanation": "Caching layer"
+        },
+        {
+          "Keyword": "data warehouse",
+          "AWS Service": "Redshift",
+          "Explanation": "Analytics, BI"
+        },
+        {
+          "Keyword": "graph database",
+          "AWS Service": "Neptune",
+          "Explanation": "Relationships"
+        },
+        {
+          "Keyword": "time-series",
+          "AWS Service": "Timestream",
+          "Explanation": "IoT, metrics"
+        },
+        {
+          "Keyword": "ledger",
+          "AWS Service": "QLDB",
+          "Explanation": "Immutable history"
+        },
+        {
+          "Keyword": "read replicas",
+          "AWS Service": "RDS, Aurora",
+          "Explanation": "Scale reads"
+        }
+      ]
+    },
+    {
+      "category": "🔧 Operational Keywords",
+      "keywords": [
+        {
+          "Keyword": "infrastructure as code",
+          "AWS Service": "CloudFormation, CDK",
+          "Explanation": "IaC"
+        },
+        {
+          "Keyword": "configuration management",
+          "AWS Service": "Systems Manager, Config",
+          "Explanation": "Manage configs"
+        },
+        {
+          "Keyword": "patch management",
+          "AWS Service": "Systems Manager Patch Manager",
+          "Explanation": "OS patching"
+        },
+        {
+          "Keyword": "monitoring",
+          "AWS Service": "CloudWatch",
+          "Explanation": "Metrics, logs, alarms"
+        },
+        {
+          "Keyword": "distributed tracing",
+          "AWS Service": "X-Ray",
+          "Explanation": "Application insights"
+        },
+        {
+          "Keyword": "centralized logging",
+          "AWS Service": "CloudWatch Logs, S3",
+          "Explanation": "Log aggregation"
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "EC2 vs Lambda vs Fargate",
+      "services": [
+        "EC2",
+        "Lambda",
+        "Fargate"
+      ],
+      "features": [
+        {
+          "Feature": "Type",
+          "EC2": "VMs",
+          "Lambda": "Serverless functions",
+          "Fargate": "Serverless containers"
+        },
+        {
+          "Feature": "Management",
+          "EC2": "You manage",
+          "Lambda": "AWS manages",
+          "Fargate": "AWS manages"
+        },
+        {
+          "Feature": "Scaling",
+          "EC2": "Manual/Auto Scaling",
+          "Lambda": "Automatic",
+          "Fargate": "Automatic"
+        },
+        {
+          "Feature": "Pricing",
+          "EC2": "Per hour/second",
+          "Lambda": "Per request + duration",
+          "Fargate": "Per vCPU/memory"
+        },
+        {
+          "Feature": "Max runtime",
+          "EC2": "Unlimited",
+          "Lambda": "15 minutes",
+          "Fargate": "Unlimited"
+        },
+        {
+          "Feature": "Use case",
+          "EC2": "Long-running, full control",
+          "Lambda": "Event-driven, short tasks",
+          "Fargate": "Containers without management"
+        }
+      ]
+    },
+    {
+      "title": "ECS vs EKS vs Fargate",
+      "services": [
+        "ECS",
+        "EKS",
+        "Fargate"
+      ],
+      "features": [
+        {
+          "Feature": "Orchestration",
+          "ECS": "AWS proprietary",
+          "EKS": "Kubernetes",
+          "Fargate": "Serverless"
+        },
+        {
+          "Feature": "Complexity",
+          "ECS": "Simple",
+          "EKS": "Complex",
+          "Fargate": "Simplest"
+        },
+        {
+          "Feature": "Portability",
+          "ECS": "AWS only",
+          "EKS": "Multi-cloud",
+          "Fargate": "AWS only"
+        },
+        {
+          "Feature": "Control",
+          "ECS": "High",
+          "EKS": "Highest",
+          "Fargate": "Low"
+        },
+        {
+          "Feature": "Cost",
+          "ECS": "Low",
+          "EKS": "Higher (control plane $0.10/hr)",
+          "Fargate": "Pay per task"
+        }
+      ]
+    },
+    {
+      "title": "S3 vs EBS vs EFS vs Instance Store",
+      "services": [
+        "S3",
+        "EBS",
+        "EFS",
+        "Instance Store"
+      ],
+      "features": [
+        {
+          "Feature": "Type",
+          "S3": "Object",
+          "EBS": "Block",
+          "EFS": "File",
+          "Instance Store": "Block"
+        },
+        {
+          "Feature": "Attachment",
+          "S3": "Many (via API)",
+          "EBS": "1 instance (except Multi-Attach)",
+          "EFS": "Many instances",
+          "Instance Store": "1 instance"
+        },
+        {
+          "Feature": "AZ",
+          "S3": "Multi-AZ",
+          "EBS": "Single AZ",
+          "EFS": "Multi-AZ",
+          "Instance Store": "Single AZ"
+        },
+        {
+          "Feature": "Persistence",
+          "S3": "Yes",
+          "EBS": "Yes",
+          "EFS": "Yes",
+          "Instance Store": "No (ephemeral)"
+        },
+        {
+          "Feature": "Max size",
+          "S3": "Unlimited",
+          "EBS": "16 TB",
+          "EFS": "Unlimited",
+          "Instance Store": "Limited by instance"
+        },
+        {
+          "Feature": "Use case",
+          "S3": "Static files, backups",
+          "EBS": "Boot volumes, databases",
+          "EFS": "Shared files",
+          "Instance Store": "Cache, temporary"
+        }
+      ]
+    },
+    {
+      "title": "RDS vs DynamoDB vs Aurora",
+      "services": [
+        "RDS",
+        "DynamoDB",
+        "Aurora"
+      ],
+      "features": [
+        {
+          "Feature": "Type",
+          "RDS": "Relational (SQL)",
+          "DynamoDB": "NoSQL (Key-Value)",
+          "Aurora": "Relational (SQL)"
+        },
+        {
+          "Feature": "Management",
+          "RDS": "Managed",
+          "DynamoDB": "Fully managed",
+          "Aurora": "Fully managed"
+        },
+        {
+          "Feature": "Scaling",
+          "RDS": "Vertical (manual), Horizontal (Read Replicas)",
+          "DynamoDB": "Horizontal (automatic)",
+          "Aurora": "Horizontal (automatic)"
+        },
+        {
+          "Feature": "Performance",
+          "RDS": "Standard",
+          "DynamoDB": "Millisecond latency",
+          "Aurora": "5x MySQL, 3x PostgreSQL"
+        },
+        {
+          "Feature": "Cost",
+          "RDS": "$$",
+          "DynamoDB": "$ (On-Demand), $$ (Provisioned)",
+          "Aurora": "$$$ (20% more than RDS)"
+        },
+        {
+          "Feature": "Use case",
+          "RDS": "OLTP, traditional apps",
+          "DynamoDB": "Serverless, high scale",
+          "Aurora": "High performance RDBMS"
+        }
+      ]
+    },
+    {
+      "title": "RDS Read Replicas vs Multi-AZ",
+      "services": [
+        "Read Replicas",
+        "Multi-AZ"
+      ],
+      "features": [
+        {
+          "Feature": "Purpose",
+          "Read Replicas": "Scale reads",
+          "Multi-AZ": "High availability"
+        },
+        {
+          "Feature": "Replication",
+          "Read Replicas": "Asynchronous",
+          "Multi-AZ": "Synchronous"
+        },
+        {
+          "Feature": "Readable",
+          "Read Replicas": "Yes",
+          "Multi-AZ": "No (standby)"
+        },
+        {
+          "Feature": "Failover",
+          "Read Replicas": "Manual",
+          "Multi-AZ": "Automatic (60-120s)"
+        },
+        {
+          "Feature": "Cross-Region",
+          "Read Replicas": "Yes",
+          "Multi-AZ": "No"
+        },
+        {
+          "Feature": "Use case",
+          "Read Replicas": "Read-heavy workloads",
+          "Multi-AZ": "DR, HA"
+        }
+      ]
+    },
+    {
+      "title": "ElastiCache: Redis vs Memcached",
+      "services": [
+        "Redis",
+        "Memcached"
+      ],
+      "features": [
+        {
+          "Feature": "Data types",
+          "Redis": "Rich (lists, sets, sorted sets)",
+          "Memcached": "Simple (strings)"
+        },
+        {
+          "Feature": "Persistence",
+          "Redis": "Yes",
+          "Memcached": "No"
+        },
+        {
+          "Feature": "Replication",
+          "Redis": "Yes (Multi-AZ)",
+          "Memcached": "No"
+        },
+        {
+          "Feature": "Backup",
+          "Redis": "Yes",
+          "Memcached": "No"
+        },
+        {
+          "Feature": "Pub/Sub",
+          "Redis": "Yes",
+          "Memcached": "No"
+        },
+        {
+          "Feature": "Multi-threading",
+          "Redis": "No",
+          "Memcached": "Yes"
+        },
+        {
+          "Feature": "Use case",
+          "Redis": "Session store, leaderboards",
+          "Memcached": "Simple cache, multi-threaded"
+        }
+      ]
+    },
+    {
+      "title": "Security Groups vs NACLs",
+      "services": [
+        "Security Groups",
+        "NACLs"
+      ],
+      "features": [
+        {
+          "Feature": "Level",
+          "Security Groups": "Instance (ENI)",
+          "NACLs": "Subnet"
+        },
+        {
+          "Feature": "State",
+          "Security Groups": "Stateful",
+          "NACLs": "Stateless"
+        },
+        {
+          "Feature": "Rules",
+          "Security Groups": "Allow only",
+          "NACLs": "Allow + Deny"
+        },
+        {
+          "Feature": "Processing",
+          "Security Groups": "All rules",
+          "NACLs": "Rules in order"
+        },
+        {
+          "Feature": "Default",
+          "Security Groups": "Deny all inbound",
+          "NACLs": "Allow all"
+        },
+        {
+          "Feature": "Use case",
+          "Security Groups": "Instance security",
+          "NACLs": "Subnet security, block IPs"
+        }
+      ]
+    },
+    {
+      "title": "ALB vs NLB vs GWLB",
+      "services": [
+        "ALB",
+        "NLB",
+        "GWLB"
+      ],
+      "features": [
+        {
+          "Feature": "Layer",
+          "ALB": "7 (HTTP/HTTPS)",
+          "NLB": "4 (TCP/UDP/TLS)",
+          "GWLB": "3 (IP)"
+        },
+        {
+          "Feature": "Latency",
+          "ALB": "~400 ms",
+          "NLB": "~100 ms",
+          "GWLB": "Minimal"
+        },
+        {
+          "Feature": "Static IP",
+          "ALB": "No",
+          "NLB": "Yes (Elastic IP)",
+          "GWLB": "No"
+        },
+        {
+          "Feature": "Preserve source IP",
+          "ALB": "Via headers",
+          "NLB": "Yes",
+          "GWLB": "Yes"
+        },
+        {
+          "Feature": "Path routing",
+          "ALB": "Yes",
+          "NLB": "No",
+          "GWLB": "No"
+        },
+        {
+          "Feature": "WebSockets",
+          "ALB": "Yes",
+          "NLB": "Yes",
+          "GWLB": "No"
+        },
+        {
+          "Feature": "Use case",
+          "ALB": "Web apps, microservices",
+          "NLB": "Performance, static IP",
+          "GWLB": "Security appliances"
+        }
+      ]
+    },
+    {
+      "title": "CloudFront vs Global Accelerator",
+      "services": [
+        "CloudFront",
+        "Global Accelerator"
+      ],
+      "features": [
+        {
+          "Feature": "Purpose",
+          "CloudFront": "CDN, cache content",
+          "Global Accelerator": "Accelerate TCP/UDP"
+        },
+        {
+          "Feature": "Caching",
+          "CloudFront": "Yes",
+          "Global Accelerator": "No"
+        },
+        {
+          "Feature": "Static IP",
+          "CloudFront": "No",
+          "Global Accelerator": "Yes (2 Anycast IPs)"
+        },
+        {
+          "Feature": "Protocols",
+          "CloudFront": "HTTP, HTTPS, WebSockets",
+          "Global Accelerator": "TCP, UDP"
+        },
+        {
+          "Feature": "Use case",
+          "CloudFront": "Static content, APIs",
+          "Global Accelerator": "Gaming, IoT, VoIP"
+        }
+      ]
+    },
+    {
+      "title": "VPN vs Direct Connect",
+      "services": [
+        "VPN",
+        "Direct Connect"
+      ],
+      "features": [
+        {
+          "Feature": "Type",
+          "VPN": "Encrypted over internet",
+          "Direct Connect": "Dedicated physical connection"
+        },
+        {
+          "Feature": "Setup time",
+          "VPN": "Minutes",
+          "Direct Connect": "Weeks/months"
+        },
+        {
+          "Feature": "Bandwidth",
+          "VPN": "Up to 1.25 Gbps/tunnel",
+          "Direct Connect": "50 Mbps - 100 Gbps"
+        },
+        {
+          "Feature": "Latency",
+          "VPN": "Higher",
+          "Direct Connect": "Lower"
+        },
+        {
+          "Feature": "Cost",
+          "VPN": "Low",
+          "Direct Connect": "High"
+        },
+        {
+          "Feature": "Encryption",
+          "VPN": "Yes (IPsec)",
+          "Direct Connect": "No (add VPN over DX)"
+        },
+        {
+          "Feature": "Use case",
+          "VPN": "Quick setup, backup",
+          "Direct Connect": "High throughput, consistent"
+        }
+      ]
+    },
+    {
+      "title": "CloudTrail vs CloudWatch vs Config",
+      "services": [
+        "CloudTrail",
+        "CloudWatch",
+        "Config"
+      ],
+      "features": [
+        {
+          "Feature": "Purpose",
+          "CloudTrail": "API audit",
+          "CloudWatch": "Monitoring",
+          "Config": "Configuration tracking"
+        },
+        {
+          "Feature": "Focus",
+          "CloudTrail": "Who did what",
+          "CloudWatch": "Metrics, logs, alarms",
+          "Config": "Resource state"
+        },
+        {
+          "Feature": "Data",
+          "CloudTrail": "API calls",
+          "CloudWatch": "Metrics, logs",
+          "Config": "Configuration history"
+        },
+        {
+          "Feature": "Use case",
+          "CloudTrail": "Security audit, compliance",
+          "CloudWatch": "Performance monitoring",
+          "Config": "Compliance, change tracking"
+        }
+      ]
+    },
+    {
+      "title": "IAM Role vs IAM User vs IAM Group",
+      "services": [
+        "IAM User",
+        "IAM Group",
+        "IAM Role"
+      ],
+      "features": [
+        {
+          "Feature": "For",
+          "IAM User": "Person",
+          "IAM Group": "Collection of users",
+          "IAM Role": "AWS service, external identity"
+        },
+        {
+          "Feature": "Credentials",
+          "IAM User": "Long-term (password, access keys)",
+          "IAM Group": "N/A",
+          "IAM Role": "Temporary (STS)"
+        },
+        {
+          "Feature": "Use case",
+          "IAM User": "Human access",
+          "IAM Group": "Manage permissions for multiple users",
+          "IAM Role": "EC2, Lambda, cross-account"
+        }
+      ]
+    },
+    {
+      "title": "Secrets Manager vs Parameter Store",
+      "services": [
+        "Secrets Manager",
+        "Parameter Store"
+      ],
+      "features": [
+        {
+          "Feature": "Automatic rotation",
+          "Secrets Manager": "Yes (Lambda-based)",
+          "Parameter Store": "No"
+        },
+        {
+          "Feature": "RDS integration",
+          "Secrets Manager": "Yes",
+          "Parameter Store": "No"
+        },
+        {
+          "Feature": "Cost",
+          "Secrets Manager": "$0.40/secret/month",
+          "Parameter Store": "Free (Standard), $0.05 (Advanced)"
+        },
+        {
+          "Feature": "Use case",
+          "Secrets Manager": "Database passwords, API keys",
+          "Parameter Store": "Application configs"
+        }
+      ]
+    },
+    {
+      "title": "SQS vs SNS vs EventBridge",
+      "services": [
+        "SQS",
+        "SNS",
+        "EventBridge"
+      ],
+      "features": [
+        {
+          "Feature": "Pattern",
+          "SQS": "Queue (1:1)",
+          "SNS": "Pub/Sub (1:N)",
+          "EventBridge": "Event bus"
+        },
+        {
+          "Feature": "Delivery",
+          "SQS": "Pull",
+          "SNS": "Push",
+          "EventBridge": "Push"
+        },
+        {
+          "Feature": "Subscribers",
+          "SQS": "1 per message",
+          "SNS": "Multiple",
+          "EventBridge": "Multiple targets"
+        },
+        {
+          "Feature": "Ordering",
+          "SQS": "FIFO option",
+          "SNS": "FIFO option",
+          "EventBridge": "No"
+        },
+        {
+          "Feature": "Use case",
+          "SQS": "Decouple, buffer",
+          "SNS": "Notifications, fan-out",
+          "EventBridge": "Event-driven, SaaS"
+        }
+      ]
+    },
+    {
+      "title": "SQS Standard vs SQS FIFO",
+      "services": [
+        "Standard",
+        "FIFO"
+      ],
+      "features": [
+        {
+          "Feature": "Throughput",
+          "Standard": "Unlimited",
+          "FIFO": "300 TPS (3,000 with batching)"
+        },
+        {
+          "Feature": "Ordering",
+          "Standard": "Best-effort",
+          "FIFO": "Strict FIFO"
+        },
+        {
+          "Feature": "Duplicates",
+          "Standard": "Possible",
+          "FIFO": "No (exactly-once)"
+        },
+        {
+          "Feature": "Name",
+          "Standard": "Any",
+          "FIFO": "Must end with `.fifo`"
+        },
+        {
+          "Feature": "Use case",
+          "Standard": "High throughput",
+          "FIFO": "Order matters, no duplicates"
+        }
+      ]
+    },
+    {
+      "title": "DataSync vs Snow Family vs DMS",
+      "services": [
+        "DataSync",
+        "Snow Family",
+        "DMS"
+      ],
+      "features": [
+        {
+          "Feature": "Purpose",
+          "DataSync": "File transfer",
+          "Snow Family": "Physical data migration",
+          "DMS": "Database migration"
+        },
+        {
+          "Feature": "Method",
+          "DataSync": "Network",
+          "Snow Family": "Physical device",
+          "DMS": "Network"
+        },
+        {
+          "Feature": "Use case",
+          "DataSync": "Continuous sync",
+          "Snow Family": "Large data, limited bandwidth",
+          "DMS": "Database migration"
+        }
+      ]
+    },
+    {
+      "title": "Kinesis Data Streams vs Kinesis Firehose",
+      "services": [
+        "Data Streams",
+        "Firehose"
+      ],
+      "features": [
+        {
+          "Feature": "Latency",
+          "Data Streams": "Real-time (200ms)",
+          "Firehose": "Near real-time (60s)"
+        },
+        {
+          "Feature": "Scaling",
+          "Data Streams": "Manual (shards)",
+          "Firehose": "Automatic"
+        },
+        {
+          "Feature": "Retention",
+          "Data Streams": "1-365 days",
+          "Firehose": "No retention"
+        },
+        {
+          "Feature": "Destinations",
+          "Data Streams": "Custom consumers",
+          "Firehose": "S3, Redshift, OpenSearch, Splunk"
+        },
+        {
+          "Feature": "Use case",
+          "Data Streams": "Real-time processing",
+          "Firehose": "Load to destinations"
+        }
+      ]
+    },
+    {
+      "title": "Athena vs Redshift vs EMR",
+      "services": [
+        "Athena",
+        "Redshift",
+        "EMR"
+      ],
+      "features": [
+        {
+          "Feature": "Type",
+          "Athena": "Serverless SQL",
+          "Redshift": "Data warehouse",
+          "EMR": "Big data cluster"
+        },
+        {
+          "Feature": "Data location",
+          "Athena": "S3",
+          "Redshift": "Redshift storage",
+          "EMR": "HDFS, S3"
+        },
+        {
+          "Feature": "Use case",
+          "Athena": "Ad-hoc queries",
+          "Redshift": "OLAP, BI",
+          "EMR": "Hadoop, Spark"
+        },
+        {
+          "Feature": "Cost",
+          "Athena": "Pay per query",
+          "Redshift": "Pay for cluster",
+          "EMR": "Pay for EC2 + EMR"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import type { Question } from '../types';
+import revisionData from '../data/revision_data.json';
 
 interface QuizProps {
   questions: Question[];
@@ -16,10 +17,27 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
   const [answers, setAnswers] = useState<Record<number, 'correct' | 'incorrect'>>({});
   // Track user selected letters for each question
   const [userSelections, setUserSelections] = useState<Record<number, string[]>>({});
-  // Track revealed status for each question
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
+  const [showHint, setShowHint] = useState<Record<number, boolean>>({});
 
   const question = questions[currentIndex];
+
+  // Prepare flat vocabulary of keywords for matching
+  const allKeywords = useMemo(() => {
+    return revisionData.keywords.flatMap(cat => cat.keywords.map(k => ({
+      keywordText: k.Keyword.replace(/"/g, '').toLowerCase(),
+      service: k['AWS Service'],
+      explanation: k.Explanation,
+      category: cat.category
+    })));
+  }, []);
+
+  // Check if current question has any keywords
+  const matchedHints = useMemo(() => {
+    if (!question) return [];
+    const qText = question.question.toLowerCase();
+    return allKeywords.filter(k => qText.includes(k.keywordText));
+  }, [question, allKeywords]);
   // Calculate progress relative to answered questions instead of currentIndex
   const progress = (Object.keys(answers).length / questions.length) * 100;
   
@@ -71,6 +89,8 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
 
   const handleReveal = () => {
     setRevealed((prev) => ({ ...prev, [question.id]: true }));
+    // Hide hint if revealed
+    setShowHint((prev) => ({ ...prev, [question.id]: false }));
     
     // Auto-score based on selections if there are correct letters data
     if (question.correctLetters && question.correctLetters.length > 0) {
@@ -86,12 +106,14 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
   const handleNext = () => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
+      setShowHint((prev) => ({ ...prev, [question.id]: false }));
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - 1);
+      setShowHint((prev) => ({ ...prev, [question.id]: false }));
     }
   };
 
@@ -184,6 +206,33 @@ function Quiz({ questions, onFinish, onBack }: QuizProps) {
         {question.isMultiSelect && (
           <div className="question-card__multi-badge">
             Multiple answers required
+          </div>
+        )}
+
+        {/* Keyword Hints */}
+        {!isRevealed && matchedHints.length > 0 && (
+          <div className="quiz-hints" style={{ marginTop: '1rem', marginBottom: '1rem', padding: '1rem', borderRadius: '8px', background: 'var(--surface-light)', borderLeft: '3px solid var(--accent-secondary)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontWeight: 600, color: 'var(--accent-secondary)' }}>💡 Keyword Hint Available</span>
+              <button 
+                onClick={() => setShowHint(prev => ({ ...prev, [question.id]: !prev[question.id] }))}
+                style={{ background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', textDecoration: 'underline' }}
+              >
+                {showHint[question.id] ? 'Hide' : 'Show'}
+              </button>
+            </div>
+            
+            {showHint[question.id] && (
+              <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {matchedHints.map((hint, idx) => (
+                  <div key={idx} style={{ padding: '0.5rem', background: 'var(--bg)', borderRadius: '4px', border: '1px dashed var(--border)' }}>
+                    <div><strong>Keyword:</strong> "{hint.keywordText}"</div>
+                    <div style={{ color: 'var(--accent-primary)', fontWeight: 600, marginTop: '0.25rem' }}>{hint.service}</div>
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{hint.explanation}</div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 

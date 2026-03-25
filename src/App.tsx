@@ -6,8 +6,11 @@ import UserMenu from './components/UserMenu';
 import Dashboard from './components/Dashboard';
 import Quiz from './components/Quiz';
 import QuizResult from './components/QuizResult';
+import RevisionArea from './components/RevisionArea';
 import type { Question, ViewType } from './types';
 import './index.css';
+
+import practiceExamData from './data/practice_exam_vn.json';
 
 const allQuestions: Question[] = questionsData as Question[];
 
@@ -42,6 +45,32 @@ function AppContent() {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleStartRevision = useCallback(() => {
+    setView('revision');
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleStartPracticeExam = useCallback(() => {
+    // Map practice questions to our Question interface
+    const pQs: Question[] = practiceExamData.map((pq: any, idx: number) => ({
+      ...pq,
+      id: 10000 + idx, // offset ID to avoid conflict
+      isMultiSelect: false,
+      correctLetters: pq.answer ? [pq.answer.replace(/[^A-F]/g, '')] : [],
+      answerText: pq.answer || "Answer not available in parsing",
+      choices: pq.options.map((opt: string) => ({
+        text: opt,
+        letter: opt.charAt(0),
+        isCorrect: pq.answer ? pq.answer.replace(/[^A-F]/g, '').includes(opt.charAt(0)) : false
+      }))
+    }));
+    setQuizQuestions(pQs);
+    setFinalAnswers({});
+    setFinalSelections({});
+    setView('quiz');
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleRetry = useCallback(() => {
     setFinalAnswers({});
     setFinalSelections({});
@@ -70,7 +99,18 @@ function AppContent() {
 
       {/* Views */}
       {view === 'dashboard' && (
-        <Dashboard questions={allQuestions} onStartQuiz={handleStartQuiz} />
+        <Dashboard 
+          questions={allQuestions} 
+          onStartQuiz={handleStartQuiz} 
+          onOpenRevision={handleStartRevision} 
+        />
+      )}
+
+      {view === 'revision' && (
+        <RevisionArea 
+          onBack={handleBackToDashboard}
+          onStartPracticeExam={handleStartPracticeExam}
+        />
       )}
 
       {view === 'quiz' && (
